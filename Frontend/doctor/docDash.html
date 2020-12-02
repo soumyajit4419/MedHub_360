@@ -1,0 +1,1001 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico">
+  <title>My Dashboard</title>
+  <!-- Simple bar CSS -->
+  <link rel="stylesheet" href="../css/simplebar.css">
+  <!-- Fonts CSS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Icons CSS -->
+  <link rel="stylesheet" href="../css/feather.css">
+  <link rel="stylesheet" href="../css/select2.css">
+  <link rel="stylesheet" href="../css/dropzone.css">
+  <link rel="stylesheet" href="../css/uppy.min.css">
+  <link rel="stylesheet" href="../css/jquery.steps.css">
+  <link rel="stylesheet" href="../css/jquery.timepicker.css">
+  <link rel="stylesheet" href="../css/quill.snow.css">
+  <!-- Date Range Picker CSS -->
+  <link rel="stylesheet" href="../css/daterangepicker.css">
+  <!-- App CSS -->
+  <link rel="stylesheet" href="../css/app-light.css" id="lightTheme" disabled>
+  <link rel="stylesheet" href="../css/app-dark.css" id="darkTheme">
+</head>
+
+<body class="vertical  dark  ">
+  <div class="wrapper">
+    <!--########## -->
+    <!-- Navbar-->
+    <!--########## -->
+    <nav class="topnav navbar navbar-light">
+      <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
+        <i class="fe fe-menu navbar-toggler-icon"></i>
+      </button>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link text-muted my-2" href="#" id="modeSwitcher" data-mode="dark">
+            <i class="fe fe-sun fe-16"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
+            <span class="fe fe-grid fe-16"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+      <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+        <i class="fe fe-x"><span class="sr-only"></span></i>
+      </a>
+      <nav class="vertnav navbar navbar-light">
+        <!-- nav bar -->
+        <div class="w-100 mb-4 d-flex">
+          <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="../index.html">
+            <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
+              <g>
+                <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
+                <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
+                <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
+              </g>
+            </svg>
+          </a>
+        </div>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+          <li class="nav-item dropdown">
+            <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-activity fe-16"></i>
+              <span class="ml-3 item-text">Analytics</span><span class="sr-only">(current)</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="dashboard">
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./docDash.html"><span class="ml-1 item-text">My
+                    Analytics</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./docPatViewDash.html"><span class="ml-1 item-text">User
+                    Analytics</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./dashboard-saas.html"><span class="ml-1 item-text">Group
+                    Analytics</span></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p class="text-muted nav-heading mt-4 mb-1">
+          <span>Personal</span>
+        </p>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+          <li class="nav-item dropdown">
+            <a href="#profile" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-user fe-16"></i>
+              <span class="ml-3 item-text">Profile</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="profile">
+              <a class="nav-link pl-3" href="./docProfile.html"><span class="ml-1">My Profile</span></a>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#fileman" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-folder fe-16"></i>
+              <span class="ml-3 item-text">File Manager</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="fileman">
+              <a class="nav-link pl-3" href="./files-list.html"><span class="ml-1">Files List</span></a>
+              <a class="nav-link pl-3" href="./files-grid.html"><span class="ml-1">Files Grid</span></a>
+            </ul>
+          </li>
+        </ul>
+        <p class="text-muted nav-heading mt-4 mb-1">
+          <span>Security</span>
+        </p>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+          <li class="nav-item dropdown">
+            <a href="#auth" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-shield fe-16"></i>
+              <span class="ml-3 item-text">Authentication</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="auth">
+              <a class="nav-link pl-3" href="./resetDocPaswd.html"><span class="ml-1">Reset Password</span></a>
+            </ul>
+          </li>
+        </ul>
+        <div class="btn-box w-100 mt-4 mb-1">
+          <a href="" target="_blank" class="btn mb-2 btn-primary btn-lg btn-block">
+            <i class="fe fe-log-out fe-12 mx-2"></i><span class="small">Log Out</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+
+    <!--########## -->
+    <!-- Main Body -->
+    <!--########## -->
+    <main role="main" class="main-content">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow  border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-3 text-center">
+                        <span class="circle circle-sm bg-primary-light">
+                          <i class="fe fe-16 fe-user text-white mb-0"></i>
+                        </span>
+                      </div>
+                      <div class="col pr-0">
+                        <p class="small text-muted mb-0">Name</p>
+                        <span class="h3 mb-0">Soumyajit</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-3 text-center">
+                        <span class="circle circle-sm bg-primary">
+                          <i class="fe fe-16 fe-underline text-white mb-0"></i>
+                        </span>
+                      </div>
+                      <div class="col pr-0">
+                        <p class="small text-muted mb-0">User ID</p>
+                        <span class="h3 mb-0">45456fdfs</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-3 text-center">
+                        <span class="circle circle-sm bg-primary">
+                          <i class="fe fe-16 fe-zap text-white mb-0"></i>
+                        </span>
+                      </div>
+                      <div class="col">
+                        <p class="small text-muted mb-0">Age</p>
+                        <div class="row align-items-center no-gutters">
+                          <div class="col-auto">
+                            <span class="h3 mr-2 mb-0"> 18 </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-3 text-center">
+                        <span class="circle circle-sm bg-primary">
+                          <i class="fe fe-16 fe-smile text-white mb-0"></i>
+                        </span>
+                      </div>
+                      <div class="col">
+                        <p class="small text-muted mb-0">Sex</p>
+                        <span class="h3 mb-0">Male</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- end section -->
+            <div class="row justify-content-center">
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-3 text-center">
+                        <span class="circle circle-sm bg-primary">
+                          <i class="fe fe-16 fe-heart text-white mb-0"></i>
+                        </span>
+                      </div>
+                      <div class="col pr-0">
+                        <p class="small text-muted mb-0">Blood Pressure</p>
+                        <span class="h3 mb-0">128/54</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-3 text-center">
+                        <span class="circle circle-sm bg-primary">
+                          <i class="fe fe-16 fe-bar-chart-2 text-white mb-0"></i>
+                        </span>
+                      </div>
+                      <div class="col">
+                        <p class="small text-muted mb-0">Height</p>
+                        <div class="row align-items-center no-gutters">
+                          <div class="col-auto">
+                            <span class="h3 mr-2 mb-0"> 128cms </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-3 text-center">
+                        <span class="circle circle-sm bg-primary">
+                          <i class="fe fe-16 fe-package text-white mb-0"></i>
+                        </span>
+                      </div>
+                      <div class="col">
+                        <p class="small text-muted mb-0">Weight</p>
+                        <span class="h3 mb-0">80kg</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- end section -->
+
+            <!-- Bar charts-->
+            <div class="row align-items-center my-2">
+              <div class="col-auto ml-auto">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <label for="reportrange" class="sr-only">Date Ranges</label>
+                    <div id="reportrange" class="px-2 py-2 text-muted">
+                      <i class="fe fe-calendar fe-16 mx-2"></i>
+                      <span class="small"></span>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="row my-4">
+              <div class="col-md-12">
+                <div class="chart-box">
+                  <h2 class="h2 text-center">Blood Glucose Level</h2>
+                  <div id="columnChart"></div>
+                </div>
+              </div> <!-- .col -->
+            </div> <!-- end section -->
+
+            <br />
+            <!-- Line charts-->
+            <div class="my-4">
+              <h2 class="h2 text-center">Heamoglobin</h2>
+              <div id="lineChart"></div>
+            </div>
+
+
+            <!-- info small box -->
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <div class="card shadow mb-4">
+                  <div class="card-body">
+                    <div class="chart-widget">
+                      <div id="gradientRadial"></div>
+                    </div>
+                    <div class="row justify-content-center">
+                      <div class="col-6 text-center">
+                        <p class="text-muted mb-0">No of test conducted per year</p>
+                        <h4 class="mb-1">126</h4>
+                        <p class="text-muted mb-2">+5.5%</p>
+                      </div>
+                    </div>
+                  </div> <!-- .card-body -->
+                </div> <!-- .card -->
+              </div> <!-- .col -->
+            </div> <!-- / .row -->
+          </div>
+        </div> <!-- .row -->
+      </div> <!-- .container-fluid -->
+
+      <!--########## -->
+      <!-- Modal Body -->
+      <!--########## -->
+      <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="defaultModalLabel">View Dashboard</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body px-5">
+              <div class="row align-items-center">
+                <div class="col-6 text-center">
+                  <div class="squircle bg-primary justify-content-center">
+                    <i class="fe fe-users fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>Users</p>
+                </div>
+                <div class="col-6 text-center">
+                  <div class="squircle bg-primary justify-content-center">
+                    <i class="fe fe-activity fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>Activity</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main> <!-- main -->
+  </div> <!-- .wrapper -->
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/moment.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/simplebar.min.js"></script>
+  <script src='../js/daterangepicker.js'></script>
+  <script src='../js/jquery.stickOnScroll.js'></script>
+  <script src="../js/tinycolor-min.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/d3.min.js"></script>
+  <script src="../js/topojson.min.js"></script>
+  <script src="../js/datamaps.all.min.js"></script>
+  <script src="../js/datamaps-zoomto.js"></script>
+  <script src="../js/datamaps.custom.js"></script>
+  <script src="../js/Chart.min.js"></script>
+  <script>
+    /* defind global options */
+    Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
+    Chart.defaults.global.defaultFontColor = colors.mutedColor;
+  </script>
+  <script src="../js/gauge.min.js"></script>
+  <script src="../js/jquery.sparkline.min.js"></script>
+  <script src="../js/apexcharts.min.js"></script>
+  <!-- <script src="../js/apexcharts.custom.js"></script> -->
+  <script src='../js/jquery.mask.min.js'></script>
+  <script src='../js/select2.min.js'></script>
+  <script src='../js/jquery.steps.min.js'></script>
+  <script src='../js/jquery.validate.min.js'></script>
+  <script src='../js/jquery.timepicker.js'></script>
+  <script src='../js/dropzone.min.js'></script>
+  <script src='../js/uppy.min.js'></script>
+  <script src='../js/quill.min.js'></script>
+  <script>
+    var lineChart,
+      lineChartoptions = {
+        series: [
+          {
+            name: "Page views",
+            data: [
+              31,
+              28,
+              30,
+              51,
+              42,
+              109,
+              100,
+              31,
+              40,
+              28,
+              31,
+              58,
+              30,
+              51,
+              42,
+              109,
+              100,
+              116,
+            ],
+          },
+          {
+            name: "Visitors",
+            data: [
+              11,
+              45,
+              20,
+              32,
+              34,
+              52,
+              41,
+              11,
+              32,
+              45,
+              11,
+              75,
+              20,
+              32,
+              34,
+              52,
+              41,
+              81,
+            ],
+          },
+          {
+            name: "Orders",
+            data: [
+              5,
+              25,
+              9,
+              14,
+              14,
+              32,
+              21,
+              5,
+              12,
+              25,
+              5,
+              55,
+              9,
+              14,
+              14,
+              32,
+              21,
+              65,
+            ],
+          },
+        ],
+        chart: {
+          height: 350,
+          type: "line",
+          background: "transparent",
+          zoom: { enabled: !1 },
+          toolbar: { show: !1 },
+        },
+        theme: { mode: colors.chartTheme },
+        stroke: {
+          show: !0,
+          curve: "smooth",
+          lineCap: "round",
+          colors: chartColors,
+          width: [3, 2, 3],
+          dashArray: [0, 0, 0],
+        },
+        dataLabels: { enabled: !1 },
+        responsive: [
+          {
+            breakpoint: 480,
+            options: { legend: { position: "bottom", offsetX: -10, offsetY: 0 } },
+          },
+        ],
+        markers: {
+          size: 4,
+          colors: base.primaryColor,
+          strokeColors: colors.borderColor,
+          strokeWidth: 2,
+          strokeOpacity: 0.9,
+          strokeDashArray: 0,
+          fillOpacity: 1,
+          discrete: [],
+          shape: "circle",
+          radius: 2,
+          offsetX: 0,
+          offsetY: 0,
+          onClick: void 0,
+          onDblClick: void 0,
+          showNullDataPoints: !0,
+          hover: { size: void 0, sizeOffset: 3 },
+        },
+        xaxis: {
+          type: "datetime",
+          categories: [
+            "01/01/2020 GMT",
+            "01/02/2020 GMT",
+            "01/03/2020 GMT",
+            "01/04/2020 GMT",
+            "01/05/2020 GMT",
+            "01/06/2020 GMT",
+            "01/07/2020 GMT",
+            "01/08/2020 GMT",
+            "01/09/2020 GMT",
+            "01/10/2020 GMT",
+            "01/11/2020 GMT",
+            "01/12/2020 GMT",
+            "01/13/2020 GMT",
+            "01/14/2020 GMT",
+            "01/15/2020 GMT",
+            "01/16/2020 GMT",
+            "01/17/2020 GMT",
+            "01/18/2020 GMT",
+          ],
+          labels: {
+            show: !0,
+            trim: !1,
+            minHeight: void 0,
+            maxHeight: 120,
+            style: {
+              colors: colors.mutedColor,
+              cssClass: "text-muted",
+              fontFamily: base.defaultFontFamily,
+            },
+          },
+          axisBorder: { show: !1 },
+        },
+        yaxis: {
+          labels: {
+            show: !0,
+            trim: !1,
+            offsetX: -10,
+            minHeight: void 0,
+            maxHeight: 120,
+            style: {
+              colors: colors.mutedColor,
+              cssClass: "text-muted",
+              fontFamily: base.defaultFontFamily,
+            },
+          },
+        },
+        legend: {
+          position: "top",
+          fontFamily: base.defaultFontFamily,
+          fontWeight: 400,
+          labels: { colors: colors.mutedColor, useSeriesColors: !1 },
+          markers: {
+            width: 10,
+            height: 10,
+            strokeWidth: 0,
+            strokeColor: colors.borderColor,
+            fillColors: chartColors,
+            radius: 6,
+            customHTML: void 0,
+            onClick: void 0,
+            offsetX: 0,
+            offsetY: 0,
+          },
+          itemMargin: { horizontal: 10, vertical: 0 },
+          onItemClick: { toggleDataSeries: !0 },
+          onItemHover: { highlightDataSeries: !0 },
+        },
+        grid: {
+          show: !0,
+          borderColor: colors.borderColor,
+          strokeDashArray: 0,
+          position: "back",
+          xaxis: { lines: { show: !1 } },
+          yaxis: { lines: { show: !0 } },
+          row: { colors: void 0, opacity: 0.5 },
+          column: { colors: void 0, opacity: 0.5 },
+          padding: { top: 0, right: 0, bottom: 0, left: 0 },
+        },
+      },
+      lineChartCtn = document.querySelector("#lineChart");
+    lineChartCtn &&
+      (lineChart = new ApexCharts(lineChartCtn, lineChartoptions)).render();
+
+    var columnChart,
+      columnChartoptions = {
+        series: [
+          {
+            name: "Bf",
+            data: [
+              32,
+              66,
+              44,
+              55,
+              41,
+              24,
+              67,
+              22,
+              43,
+              32,
+              66,
+              44,
+              55,
+              41,
+              24,
+              67,
+              22,
+              43,
+            ],
+          },
+          {
+            name: "Af",
+            data: [
+              7,
+              30,
+              13,
+              23,
+              20,
+              12,
+              8,
+              13,
+              27,
+              7,
+              30,
+              13,
+              23,
+              20,
+              12,
+              8,
+              13,
+              27,
+            ],
+          },
+        ],
+        chart: {
+          type: "bar",
+          height: 350,
+          stacked: !1,
+          columnWidth: "70%",
+          zoom: { enabled: !0 },
+          toolbar: { show: !1 },
+          background: "transparent",
+        },
+        dataLabels: { enabled: !1 },
+        theme: { mode: colors.chartTheme },
+        responsive: [
+          {
+            breakpoint: 480,
+            options: { legend: { position: "bottom", offsetX: -10, offsetY: 0 } },
+          },
+        ],
+        plotOptions: {
+          bar: {
+            horizontal: !1,
+            columnWidth: "40%",
+            radius: 30,
+            enableShades: !1,
+            endingShape: "rounded",
+          },
+        },
+        xaxis: {
+          type: "datetime",
+          categories: [
+            "01/01/2020 GMT",
+            "01/02/2020 GMT",
+            "01/03/2020 GMT",
+            "01/04/2020 GMT",
+            "01/05/2020 GMT",
+            "01/06/2020 GMT",
+            "01/07/2020 GMT",
+            "01/08/2020 GMT",
+            "01/09/2020 GMT",
+            "01/10/2020 GMT",
+            "01/11/2020 GMT",
+            "01/12/2020 GMT",
+            "01/13/2020 GMT",
+            "01/14/2020 GMT",
+            "01/15/2020 GMT",
+            "01/16/2020 GMT",
+            "01/17/2020 GMT",
+            "01/18/2020 GMT",
+          ],
+          labels: {
+            show: !0,
+            trim: !0,
+            minHeight: void 0,
+            maxHeight: 120,
+            style: {
+              colors: colors.mutedColor,
+              cssClass: "text-muted",
+              fontFamily: base.defaultFontFamily,
+            },
+          },
+          axisBorder: { show: !1 },
+        },
+        yaxis: {
+          labels: {
+            show: !0,
+            trim: !1,
+            offsetX: -10,
+            minHeight: void 0,
+            maxHeight: 120,
+            style: {
+              colors: colors.mutedColor,
+              cssClass: "text-muted",
+              fontFamily: base.defaultFontFamily,
+            },
+          },
+        },
+        legend: {
+          position: "top",
+          fontFamily: base.defaultFontFamily,
+          fontWeight: 400,
+          labels: { colors: colors.mutedColor, useSeriesColors: !1 },
+          markers: {
+            width: 10,
+            height: 10,
+            strokeWidth: 0,
+            strokeColor: "#fff",
+            fillColors: [extend.primaryColor, extend.primaryColorLighter],
+            radius: 6,
+            customHTML: void 0,
+            onClick: void 0,
+            offsetX: 0,
+            offsetY: 0,
+          },
+          itemMargin: { horizontal: 10, vertical: 0 },
+          onItemClick: { toggleDataSeries: !0 },
+          onItemHover: { highlightDataSeries: !0 },
+        },
+        fill: {
+          opacity: 1,
+          colors: [base.primaryColor, extend.primaryColorLighter],
+        },
+        grid: {
+          show: !0,
+          borderColor: colors.borderColor,
+          strokeDashArray: 0,
+          position: "back",
+          xaxis: { lines: { show: !1 } },
+          yaxis: { lines: { show: !0 } },
+          row: { colors: void 0, opacity: 0.5 },
+          column: { colors: void 0, opacity: 0.5 },
+          padding: { top: 0, right: 0, bottom: 0, left: 0 },
+        },
+      },
+      columnChartCtn = document.querySelector("#columnChart");
+    columnChartCtn &&
+      (columnChart = new ApexCharts(columnChartCtn, columnChartoptions)).render();
+
+    var gradientRadialChart,
+      gradientRadialOptions = {
+        series: [75],
+        chart: { height: 200, type: "radialBar", toolbar: { show: !1 } },
+        plotOptions: {
+          radialBar: {
+            startAngle: -135,
+            endAngle: 225,
+            hollow: {
+              margin: 0,
+              size: "70%",
+              background: colors.backgroundColor,
+              image: void 0,
+              imageOffsetX: 0,
+              imageOffsetY: 0,
+              position: "front",
+            },
+            track: {
+              background: colors.backgroundColor,
+              strokeWidth: "67%",
+              margin: 0,
+            },
+            dataLabels: {
+              show: !0,
+              name: {
+                fontSize: "0.875rem",
+                fontWeight: 400,
+                offsetY: -10,
+                show: !0,
+                color: colors.mutedColor,
+                fontFamily: base.defaultFontFamily,
+              },
+              value: {
+                formatter: function (e) {
+                  return parseInt(e);
+                },
+                color: colors.headingColor,
+                fontSize: "1.53125rem",
+                fontWeight: 700,
+                fontFamily: base.defaultFontFamily,
+                offsetY: 5,
+                show: !0,
+              },
+              total: {
+                show: !0,
+                fontSize: "0.875rem",
+                fontWeight: 400,
+                offsetY: -10,
+                color: colors.mutedColor,
+                fontFamily: base.defaultFontFamily,
+              },
+            },
+          },
+        },
+        fill: {
+          type: "gradient",
+          gradient: {
+            shade: "dark",
+            type: "horizontal",
+            shadeIntensity: 0.5,
+            gradientToColors: ["#ABE5A1"],
+            inverseColors: !0,
+            opacityFrom: 1,
+            opacityTo: 1,
+            stops: [0, 100],
+          },
+        },
+        stroke: { lineCap: "round" },
+        labels: ["Percent"],
+      },
+      gradientRadial = document.querySelector("#gradientRadial");
+    gradientRadial &&
+      (gradientRadialChart = new ApexCharts(
+        gradientRadial,
+        gradientRadialOptions
+      )).render();
+  </script>
+  <script>
+    $('.select2').select2(
+      {
+        theme: 'bootstrap4',
+      });
+    $('.select2-multi').select2(
+      {
+        multiple: true,
+        theme: 'bootstrap4',
+      });
+    $('.drgpicker').daterangepicker(
+      {
+        singleDatePicker: true,
+        timePicker: false,
+        showDropdowns: true,
+        locale:
+        {
+          format: 'MM/DD/YYYY'
+        }
+      });
+    $('.time-input').timepicker(
+      {
+        'scrollDefault': 'now',
+        'zindex': '9999' /* fix modal open */
+      });
+    /** date range picker */
+    if ($('.datetimes').length) {
+      $('.datetimes').daterangepicker(
+        {
+          timePicker: true,
+          startDate: moment().startOf('hour'),
+          endDate: moment().startOf('hour').add(32, 'hour'),
+          locale:
+          {
+            format: 'M/DD hh:mm A'
+          }
+        });
+    }
+    var start = moment().subtract(29, 'days');
+    var end = moment();
+
+    function cb(start, end) {
+      $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+    }
+    $('#reportrange').daterangepicker(
+      {
+        startDate: start,
+        endDate: end,
+        ranges:
+        {
+          'Today': [moment(), moment()],
+          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+      }, cb);
+    cb(start, end);
+    $('.input-placeholder').mask("00/00/0000",
+      {
+        placeholder: "__/__/____"
+      });
+    $('.input-zip').mask('00000-000',
+      {
+        placeholder: "____-___"
+      });
+    $('.input-money').mask("#.##0,00",
+      {
+        reverse: true
+      });
+    $('.input-phoneus').mask('(000) 000-0000');
+    $('.input-mixed').mask('AAA 000-S0S');
+    $('.input-ip').mask('0ZZ.0ZZ.0ZZ.0ZZ',
+      {
+        translation:
+        {
+          'Z':
+          {
+            pattern: /[0-9]/,
+            optional: true
+          }
+        },
+        placeholder: "___.___.___.___"
+      });
+    // editor
+    var editor = document.getElementById('editor');
+    if (editor) {
+      var toolbarOptions = [
+        [
+          {
+            'font': []
+          }],
+        [
+          {
+            'header': [1, 2, 3, 4, 5, 6, false]
+          }],
+        ['bold', 'italic', 'underline', 'strike'],
+        ['blockquote', 'code-block'],
+        [
+          {
+            'header': 1
+          },
+          {
+            'header': 2
+          }],
+        [
+          {
+            'list': 'ordered'
+          },
+          {
+            'list': 'bullet'
+          }],
+        [
+          {
+            'script': 'sub'
+          },
+          {
+            'script': 'super'
+          }],
+        [
+          {
+            'indent': '-1'
+          },
+          {
+            'indent': '+1'
+          }], // outdent/indent
+        [
+          {
+            'direction': 'rtl'
+          }], // text direction
+        [
+          {
+            'color': []
+          },
+          {
+            'background': []
+          }], // dropdown with defaults from theme
+        [
+          {
+            'align': []
+          }],
+        ['clean'] // remove formatting button
+      ];
+      var quill = new Quill(editor,
+        {
+          modules:
+          {
+            toolbar: toolbarOptions
+          },
+          theme: 'snow'
+        });
+    }
+  </script>
+  <script src="../js/apps.js"></script>
+</body>
+
+</html>

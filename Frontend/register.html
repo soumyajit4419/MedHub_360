@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico">
+  <title>Register</title>
+  <!-- Simple bar CSS -->
+  <link rel="stylesheet" href="css/simplebar.css">
+  <!-- Fonts CSS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Icons CSS -->
+  <link rel="stylesheet" href="css/feather.css">
+  <!-- Date Range Picker CSS -->
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <!-- App CSS -->
+  <link rel="stylesheet" href="css/app-light.css" id="lightTheme" disabled>
+  <link rel="stylesheet" href="css/app-dark.css" id="darkTheme">
+</head>
+
+<body class="dark">
+  <div class="wrapper vh-100" style="padding-top:2em;">
+    <div class="align-items-center h-100">
+      <form class="col-lg-6 col-md-8 col-10 mx-auto">
+        <div class="mx-auto text-center my-4">
+          <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
+            <svg version="1.1" id="logo" class="navbar-brand-img brand-md" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
+              <g>
+                <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
+                <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
+                <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
+              </g>
+            </svg>
+          </a>
+          <h2 class="my-3">Register</h2>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter Name" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputUser">User Type</label>
+            <select class="form-control select2" id="inputUser" required>
+              <option value="">Select User</option>
+              <option value="Doc">Doctor</option>
+              <option value="Pat">Patient</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="age">Age</label>
+            <input type="text" id="age" class="form-control" placeholder="Enter Age" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="sex">Gender</label>
+            <select class="form-control select2" id="sex" required>
+              <option value="">Select Sex</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
+            </select>
+          </div>
+        </div>
+        <hr class="my-4">
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="inputPassword">New Password</label>
+              <input type="password" class="form-control" id="inputPassword" placeholder="Enter Password" required>
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <p class="mb-2">Password requirements</p>
+            <p class="small text-muted mb-2"> To create a new password, you have to meet all of the following
+              requirements: </p>
+            <ul class="small text-muted pl-4 mb-0">
+              <li> Minimum 6 character </li>
+              <li>At least one special character</li>
+              <li>At least one number</li>
+              <li>Can’t be the same as a previous password </li>
+            </ul>
+          </div>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+      </form>
+    </div>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/simplebar.min.js"></script>
+  <script src='js/daterangepicker.js'></script>
+  <script src='js/jquery.stickOnScroll.js'></script>
+  <script src="js/tinycolor-min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/apps.js"></script>
+
+</body>
+
+</html>
