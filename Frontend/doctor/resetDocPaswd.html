@@ -138,8 +138,8 @@
     <main role="main" class="main-content">
       <div class="container-fluid">
         <div class="align-items-center h-100">
-          <form class="col-lg-5 col-md-5 col-10 mx-auto text-center">
-            <div class="mx-auto text-center my-4">
+          <form class="col-lg-5 col-md-5 col-10 mx-auto">
+            <div class="mx-auto text-center my-4  text-center">
               <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="../index.html">
                 <svg version="1.1" id="logo" class="navbar-brand-img brand-md" xmlns="http://www.w3.org/2000/svg"
                   xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
@@ -152,12 +152,18 @@
               </a>
               <h2 class="my-3">Reset Password</h2>
             </div>
-            <p class="text-muted">Enter your email address and we'll send you an email with instructions to reset your
+            <p class="text-muted text-center">Enter your current and new password to reset your
               password</p>
+            <br />
             <div class="form-group">
-              <label for="inputEmail" class="sr-only">New Password</label>
-              <input type="password" id="inputPassword" class="form-control form-control-lg" placeholder="New Password"
-                required="" autofocus="">
+              <label for="oldPassword">Current Password</label>
+              <input type="password" id="oldPassword" class="form-control form-control-lg"
+                placeholder="Current Password" required="" autofocus="">
+            </div>
+            <div class="form-group">
+              <label for="newPassword">New Password</label>
+              <input type="password" id="newPassword" class="form-control form-control-lg" placeholder="New Password"
+                required>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Reset Password</button>
             <br />

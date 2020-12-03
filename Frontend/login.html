@@ -26,7 +26,7 @@
 <body class="dark ">
   <div class="wrapper vh-100" style="padding-top:5em;">
     <div class="align-items-center h-100">
-      <form class="col-lg-3 col-md-4 col-10 mx-auto">
+      <form class="col-lg-3 col-md-4 col-10 mx-auto" onsubmit="event.preventDefault()">
         <div class="mx-auto text-center my-4">
           <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
             <svg version="1.1" id="logo" class="navbar-brand-img brand-md" xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,9 @@
           <label>
             <input type="checkbox" value="remember-me"> Stay logged in </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Let me in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="login()">Let me in</button>
+        <br />
+        <div class="alert alert-danger text-center" role="alert" id="errorAlert"></div>
       </form>
     </div>
   </div>
@@ -74,6 +76,7 @@
   <script src="js/lib/tinycolor-min.js"></script>
   <script src="js/lib/config.js"></script>
   <script src="js/lib/apps.js"></script>
+  <script src="js/login.js"></script>
 </body>
 
 </html>

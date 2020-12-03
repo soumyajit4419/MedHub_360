@@ -26,7 +26,7 @@
 <body class="dark">
   <div class="wrapper vh-100" style="padding-top:2em;">
     <div class="align-items-center h-100">
-      <form class="col-lg-6 col-md-8 col-10 mx-auto">
+      <form class="col-lg-6 col-md-8 col-10 mx-auto" onsubmit="event.preventDefault()">
         <div class="mx-auto text-center my-4">
           <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
             <svg version="1.1" id="logo" class="navbar-brand-img brand-md" xmlns="http://www.w3.org/2000/svg"
@@ -77,8 +77,8 @@
         <div class="row mb-4">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="inputPassword">New Password</label>
-              <input type="password" class="form-control" id="inputPassword" placeholder="Enter Password" required>
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter Password" required>
             </div>
             <div class="form-group">
               <label for="confirmPassword">Confirm Password</label>
@@ -97,7 +97,13 @@
             </ul>
           </div>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="signUp" onclick="register()">Sign
+          up</button>
+        <br />
+        <div class="alert alert-success text-center" role="alert" id="successAlert"></div>
+        <div class="alert alert-danger text-center" role="alert" id="errorAlert"></div>
+        <a href="./login.html" class="btn btn-lg btn-success btn-block" id="successBtn">Login To Continue</a>
+        <br />
       </form>
     </div>
   </div>
@@ -111,6 +117,7 @@
   <script src="js/lib/tinycolor-min.js"></script>
   <script src="js/lib/config.js"></script>
   <script src="js/lib/apps.js"></script>
+  <script src="js/register.js"></script>
 
 </body>
 
