@@ -3,16 +3,16 @@ const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 
 const userSugar = schema({
-  date: { type: String, required: true },
-  bloodGlucoseF: { type: String, required: true },
-  bloodGlucosePP: { type: String, required: true },
+  date: { type: String, required: true},
+  bloodGlucoseF: { type: String, required: true},
+  bloodGlucosePP: { type: String, required: true},
 });
 
 const userBloodCount = new schema({
-  date: { type: String, required: true },
-  hemoglobin: { type: String, required: true },
+  date: { type: String, required: true},
+  hemoglobin: { type: String, required: true},
   rbcCount: { type: String, required: true },
-  platelateCount: { type: String, required: true },
+  platelateCount: { type: String, required: true},
 });
 
 const userSchema = new schema({

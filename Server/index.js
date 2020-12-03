@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const config = require("./config");
 const auth = require("./Routes/auth");
+const user = require("./Routes/user");
 const app = express();
 port = 3600;
 
@@ -13,6 +14,8 @@ app.get("/", function (req, res, next) {
 });
 
 app.use("/auth", auth);
+app.use("/user",user);
+
 
 // Server connect
 app.listen(port, function () {
