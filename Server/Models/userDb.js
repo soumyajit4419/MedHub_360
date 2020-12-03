@@ -19,7 +19,7 @@ const userSchema = new schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
-  userId: { type: Number, required: true },
+  userId: { type: String, required: true },
   age: { type: String, required: true },
   sex: { type: String, required: true },
   height: { type: String, default: 100 },

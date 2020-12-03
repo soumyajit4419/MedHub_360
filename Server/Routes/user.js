@@ -4,7 +4,7 @@ const verifyToken = require("../Utils/verifyToken");
 const userdata = require("../Models/userDb");
 
 // Verify Route
-router.post("/verify", verifyToken, (req, res) => {
+router.get("/verify", verifyToken, (req, res) => {
   const id = req.userId;
 
   if (!id) {

@@ -1,12 +1,15 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const config = require("./config");
 const auth = require("./Routes/auth");
 const user = require("./Routes/user");
+const doc = require("./Routes/doc");
 const app = express();
 port = 3600;
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", function (req, res, next) {
@@ -14,8 +17,8 @@ app.get("/", function (req, res, next) {
 });
 
 app.use("/auth", auth);
-app.use("/user",user);
-
+app.use("/user", user);
+app.use("/doc", doc);
 
 // Server connect
 app.listen(port, function () {

@@ -41,6 +41,7 @@ router.post(
     const email = req.body.email.toString().trim();
     const name = req.body.name;
     ids = ids + 1;
+    const userId = "PAT" + ids.toString();
     const age = req.body.age;
     const sex = req.body.sex;
 
@@ -53,7 +54,7 @@ router.post(
           email: email,
           name: name,
           password: hashPassword,
-          userId: ids,
+          userId: userId,
           age: age,
           sex: sex,
         },
@@ -105,6 +106,7 @@ router.post(
     const email = req.body.email.toString().trim();
     const name = req.body.name;
     ids = ids + 1;
+    const userId = "DOC" + ids.toString();
     const age = req.body.age;
     const sex = req.body.sex;
 
@@ -117,7 +119,7 @@ router.post(
           email: email,
           name: name,
           password: hashPassword,
-          userId: ids,
+          userId: userId,
           age: age,
           sex: sex,
         },
