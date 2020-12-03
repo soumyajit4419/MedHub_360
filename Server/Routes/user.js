@@ -61,7 +61,7 @@ router.post("/updateSugarDetails", verifyToken, (req, res) => {
     if (!bloodGlucoseF) {
       bloodGlucoseF = 0;
     }
-
+    
     if (!bloodGlucosePP) {
       bloodGlucosePP = 0;
     }
@@ -150,7 +150,7 @@ router.get("/getUserData", verifyToken, (req, res) => {
     return res.json({ status: 422, message: "Missing User ID" });
   }
 
-  userdata.findById(id, (err, user) => {
+  userdata.findById(id,{ _id: 0, email: 0 ,password: 0, userId :0}, (err, user) => {
     if (err) {
       return res.json({ status: 500, message: "Server Error" });
     }
@@ -158,8 +158,8 @@ router.get("/getUserData", verifyToken, (req, res) => {
     if (!user) {
       return res.json({ status: 422, message: "User Not found" });
     }
-
-    return res.json({ status: 200, data: user });
+    
+    return res.json({ status: 200, data:user});
   });
 });
 
