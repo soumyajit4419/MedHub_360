@@ -56,7 +56,6 @@ router.post(
           userId: ids,
           age: age,
           sex: sex,
-          bloodPresure: req.body.bloodPresure,
         },
         function (err, user) {
           if (err) {
@@ -121,7 +120,6 @@ router.post(
           userId: ids,
           age: age,
           sex: sex,
-          bloodPresure: req.body.bloodPresure,
         },
         function (err, user) {
           if (err) {

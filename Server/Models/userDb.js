@@ -2,11 +2,6 @@ const mongoose = require("mongoose");
 
 const schema = mongoose.Schema;
 
-const userBloodPressure = new schema({
-  date: { type: String, required: true },
-  bloodPressure: { type: String, required: true },
-});
-
 const userSugar = schema({
   date: { type: String, required: true },
   bloodGlucoseF: { type: String, required: true },
@@ -29,7 +24,7 @@ const userSchema = new schema({
   sex: { type: String, required: true },
   height: { type: String, default: 100 },
   weight: { type: String, default: 30 },
-  bloodPressure: { type: [userBloodPressure], default: [] },
+  bloodPressure: { type: String, default: "120/80" },
   sugar: { type: [userSugar], default: [] },
   bloodCount: { type: [userBloodCount], default: [] },
 });
