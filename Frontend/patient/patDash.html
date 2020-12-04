@@ -157,8 +157,8 @@
                         </span>
                       </div>
                       <div class="col pr-0">
-                        <p class="small text-muted mb-0">Name</p>
-                        <span class="h3 mb-0">Ashish</span>
+                        <p class="small text-muted mb-0" >Name</p>
+                        <span class="h3 mb-0" id='patname'></span>
                       </div>
                     </div>
                   </div>
@@ -175,7 +175,7 @@
                       </div>
                       <div class="col pr-0">
                         <p class="small text-muted mb-0">User ID</p>
-                        <span class="h3 mb-0">sgsf5665sf</span>
+                        <span class="h3 mb-0" id="patuserid">sgsf5665sf</span>
                       </div>
                     </div>
                   </div>
@@ -194,7 +194,7 @@
                         <p class="small text-muted mb-0">Age</p>
                         <div class="row align-items-center no-gutters">
                           <div class="col-auto">
-                            <span class="h3 mr-2 mb-0"> 18 </span>
+                            <span class="h3 mr-2 mb-0" id="patage"> 18 </span>
                           </div>
                         </div>
                       </div>
@@ -213,7 +213,7 @@
                       </div>
                       <div class="col">
                         <p class="small text-muted mb-0">Sex</p>
-                        <span class="h3 mb-0">Male</span>
+                        <span class="h3 mb-0" id='patsex'>Male</span>
                       </div>
                     </div>
                   </div>
@@ -251,7 +251,7 @@
                         <p class="small text-muted mb-0">Height</p>
                         <div class="row align-items-center no-gutters">
                           <div class="col-auto">
-                            <span class="h3 mr-2 mb-0"> 128cms </span>
+                            <span class="h3 mr-2 mb-0" id="patheight"> 128cms </span>
                           </div>
                         </div>
                       </div>
@@ -270,7 +270,7 @@
                       </div>
                       <div class="col">
                         <p class="small text-muted mb-0">Weight</p>
-                        <span class="h3 mb-0">80kg</span>
+                        <span class="h3 mb-0" id="patweight">80kg</span>
                       </div>
                     </div>
                   </div>
@@ -305,7 +305,7 @@
             <br />
             <!-- Line charts-->
             <div class="my-4">
-              <h2 class="h2 text-center">Heamoglobin</h2>
+              <h2 class="h2 text-center">Blood Count Levels</h2>
               <div id="lineChart"></div>
             </div>
 
@@ -320,9 +320,9 @@
                     </div>
                     <div class="row justify-content-center">
                       <div class="col-6 text-center">
-                        <p class="text-muted mb-0">No of test conducted per year</p>
-                        <h4 class="mb-1">126</h4>
-                        <p class="text-muted mb-2">+5.5%</p>
+                        <p class="text-muted mb-0">No of test Conducted this Year</p>
+                        <h4 class="mb-1" id="patcount">126</h4>
+                        <!-- <p class="text-muted mb-2" id="">+5.5%</p> -->
                       </div>
                     </div>
                   </div> <!-- .card-body -->
@@ -372,73 +372,16 @@
       lineChartoptions = {
         series: [
           {
-            name: "Page views",
-            data: [
-              31,
-              28,
-              30,
-              51,
-              42,
-              109,
-              100,
-              31,
-              40,
-              28,
-              31,
-              58,
-              30,
-              51,
-              42,
-              109,
-              100,
-              116,
-            ],
+            name: " ",
+            data: [ ],
           },
           {
-            name: "Visitors",
-            data: [
-              11,
-              45,
-              20,
-              32,
-              34,
-              52,
-              41,
-              11,
-              32,
-              45,
-              11,
-              75,
-              20,
-              32,
-              34,
-              52,
-              41,
-              81,
-            ],
+            name: " ",
+            data: [ ],
           },
           {
-            name: "Orders",
-            data: [
-              5,
-              25,
-              9,
-              14,
-              14,
-              32,
-              21,
-              5,
-              12,
-              25,
-              5,
-              55,
-              9,
-              14,
-              14,
-              32,
-              21,
-              65,
-            ],
+            name: " ",
+            data: [ ],
           },
         ],
         chart: {
@@ -484,29 +427,11 @@
         },
         xaxis: {
           type: "datetime",
-          categories: [
-            "01/01/2020 GMT",
-            "01/02/2020 GMT",
-            "01/03/2020 GMT",
-            "01/04/2020 GMT",
-            "01/05/2020 GMT",
-            "01/06/2020 GMT",
-            "01/07/2020 GMT",
-            "01/08/2020 GMT",
-            "01/09/2020 GMT",
-            "01/10/2020 GMT",
-            "01/11/2020 GMT",
-            "01/12/2020 GMT",
-            "01/13/2020 GMT",
-            "01/14/2020 GMT",
-            "01/15/2020 GMT",
-            "01/16/2020 GMT",
-            "01/17/2020 GMT",
-            "01/18/2020 GMT",
-          ],
+          categories: [ ],
           labels: {
             show: !0,
             trim: !1,
+            
             minHeight: void 0,
             maxHeight: 120,
             style: {
@@ -566,56 +491,18 @@
       },
       lineChartCtn = document.querySelector("#lineChart");
     lineChartCtn &&
-      (lineChart = new ApexCharts(lineChartCtn, lineChartoptions)).render();
+     (lineChart = new ApexCharts(lineChartCtn, lineChartoptions)).render();
 
     var columnChart,
       columnChartoptions = {
         series: [
           {
-            name: "Bf",
-            data: [
-              32,
-              66,
-              44,
-              55,
-              41,
-              24,
-              67,
-              22,
-              43,
-              32,
-              66,
-              44,
-              55,
-              41,
-              24,
-              67,
-              22,
-              43,
-            ],
+            name: " ",
+            data: [ ],
           },
           {
-            name: "Af",
-            data: [
-              7,
-              30,
-              13,
-              23,
-              20,
-              12,
-              8,
-              13,
-              27,
-              7,
-              30,
-              13,
-              23,
-              20,
-              12,
-              8,
-              13,
-              27,
-            ],
+            name: " ",
+            data: [ ],
           },
         ],
         chart: {
@@ -638,7 +525,7 @@
         plotOptions: {
           bar: {
             horizontal: !1,
-            columnWidth: "40%",
+            columnWidth: "60%",
             radius: 30,
             enableShades: !1,
             endingShape: "rounded",
@@ -646,31 +533,13 @@
         },
         xaxis: {
           type: "datetime",
-          categories: [
-            "01/01/2020 GMT",
-            "01/02/2020 GMT",
-            "01/03/2020 GMT",
-            "01/04/2020 GMT",
-            "01/05/2020 GMT",
-            "01/06/2020 GMT",
-            "01/07/2020 GMT",
-            "01/08/2020 GMT",
-            "01/09/2020 GMT",
-            "01/10/2020 GMT",
-            "01/11/2020 GMT",
-            "01/12/2020 GMT",
-            "01/13/2020 GMT",
-            "01/14/2020 GMT",
-            "01/15/2020 GMT",
-            "01/16/2020 GMT",
-            "01/17/2020 GMT",
-            "01/18/2020 GMT",
-          ],
+          categories: [ ],
           labels: {
             show: !0,
             trim: !0,
             minHeight: void 0,
             maxHeight: 120,
+            
             style: {
               colors: colors.mutedColor,
               cssClass: "text-muted",
@@ -736,7 +605,7 @@
 
     var gradientRadialChart,
       gradientRadialOptions = {
-        series: [75],
+        series: [],
         chart: { height: 200, type: "radialBar", toolbar: { show: !1 } },
         plotOptions: {
           radialBar: {
