@@ -32,16 +32,20 @@ $.ajax({
     if (res.status !== 200) {
       window.location = "../500.html";
     } else if (res.status === 200) {
-      $('#patname').html(res.data.name);
-      $('#patemail').html(res.data.email);
-      $('#patuserid').html(res.data.userId);
+      $("#patname").html(res.data.name);
+      $("#patemail").html(res.data.email);
+      $("#patuserid").html(res.data.userId);
 
       console.log(res.data);
     }
-    
   },
   error: function (err) {
     console.log(err);
     alert(err);
   },
 });
+
+function logout() {
+  localStorage.clear();
+  window.location = "../index.html";
+}
