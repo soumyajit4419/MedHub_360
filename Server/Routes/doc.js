@@ -40,7 +40,7 @@ router.post("/updateSugarDetails", verifyToken, (req, res) => {
       var day = dateObj.getUTCDate();
       var year = dateObj.getUTCFullYear();
 
-      newdate = day + "/" + month + "/" + year + " " + "GMT";
+      var newdate = month + "/" + day + "/" + year + " " + "GMT";
 
       date = newdate;
     } else {
@@ -93,7 +93,7 @@ router.post("/updateBloodCountDetails", verifyToken, (req, res) => {
       var month = dateObj.getUTCMonth() + 1;
       var year = dateObj.getUTCFullYear();
 
-      newdate = day + "/" + month + "/" + year + " " + "GMT";
+      var newdate = month + "/" + day + "/" + year + " " + "GMT";
 
       date = newdate;
     } else {
