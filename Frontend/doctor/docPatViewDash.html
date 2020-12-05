@@ -145,12 +145,11 @@
       <div class="container-fluid">
         <div class="w-50 mx-auto text-center justify-content-center py-5 my-5">
           <h2 class="page-title mb-0">Enter The User Id To view Details</h2>
-          <p class="lead text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <!-- <p class="lead text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
           <form class="searchform searchform-lg">
             <input class="form-control form-control-lg bg-white rounded-pill pl-5" type="search" placeholder="Enter ID"
-              aria-label="Search">
-            <button type="button" class="btn mb-2 btn-primary mt-3">Search<span
-                class="fe fe-chevron-right fe-16 ml-2"></span></button>
+              aria-label="Search" id="userpatid">
+            <button type="button" class="btn mb-2 btn-primary mt-3" type="submit" onclick="getpatientdata()">Search</button>
           </form>
         </div>
         <div class="row justify-content-center">
@@ -167,7 +166,7 @@
                       </div>
                       <div class="col pr-0">
                         <p class="small text-muted mb-0">Name</p>
-                        <span class="h3 mb-0">Ashish</span>
+                        <span class="h3 mb-0" id="patname">Ashish</span>
                       </div>
                     </div>
                   </div>
@@ -184,7 +183,7 @@
                       </div>
                       <div class="col pr-0">
                         <p class="small text-muted mb-0">User ID</p>
-                        <span class="h3 mb-0">sgsf5665sf</span>
+                        <span class="h3 mb-0" id="patuserid">sgsf5665sf</span>
                       </div>
                     </div>
                   </div>
@@ -203,7 +202,7 @@
                         <p class="small text-muted mb-0">Age</p>
                         <div class="row align-items-center no-gutters">
                           <div class="col-auto">
-                            <span class="h3 mr-2 mb-0"> 18 </span>
+                            <span class="h3 mr-2 mb-0" id='patage'> 18 </span>
                           </div>
                         </div>
                       </div>
@@ -222,7 +221,7 @@
                       </div>
                       <div class="col">
                         <p class="small text-muted mb-0">Sex</p>
-                        <span class="h3 mb-0">Male</span>
+                        <span class="h3 mb-0" id='patsex'>Male</span>
                       </div>
                     </div>
                   </div>
@@ -260,7 +259,7 @@
                         <p class="small text-muted mb-0">Height</p>
                         <div class="row align-items-center no-gutters">
                           <div class="col-auto">
-                            <span class="h3 mr-2 mb-0"> 128cms </span>
+                            <span class="h3 mr-2 mb-0" id='patheight'> 128cms </span>
                           </div>
                         </div>
                       </div>
@@ -279,7 +278,7 @@
                       </div>
                       <div class="col">
                         <p class="small text-muted mb-0">Weight</p>
-                        <span class="h3 mb-0">80kg</span>
+                        <span class="h3 mb-0" id='patweight'>80kg</span>
                       </div>
                     </div>
                   </div>
@@ -330,8 +329,7 @@
                     <div class="row justify-content-center">
                       <div class="col-6 text-center">
                         <p class="text-muted mb-0">No of test conducted per year</p>
-                        <h4 class="mb-1">126</h4>
-                        <p class="text-muted mb-2">+5.5%</p>
+                        <h4 class="mb-1" id="patcount">126</h4>
                       </div>
                     </div>
                   </div> <!-- .card-body -->
@@ -409,450 +407,7 @@
   <script src='../js/lib/dropzone.min.js'></script>
   <script src='../js/lib/uppy.min.js'></script>
   <script src='../js/lib/quill.min.js'></script>
-  <script>
-    var lineChart,
-      lineChartoptions = {
-        series: [
-          {
-            name: "Page views",
-            data: [
-              31,
-              28,
-              30,
-              51,
-              42,
-              109,
-              100,
-              31,
-              40,
-              28,
-              31,
-              58,
-              30,
-              51,
-              42,
-              109,
-              100,
-              116,
-            ],
-          },
-          {
-            name: "Visitors",
-            data: [
-              11,
-              45,
-              20,
-              32,
-              34,
-              52,
-              41,
-              11,
-              32,
-              45,
-              11,
-              75,
-              20,
-              32,
-              34,
-              52,
-              41,
-              81,
-            ],
-          },
-          {
-            name: "Orders",
-            data: [
-              5,
-              25,
-              9,
-              14,
-              14,
-              32,
-              21,
-              5,
-              12,
-              25,
-              5,
-              55,
-              9,
-              14,
-              14,
-              32,
-              21,
-              65,
-            ],
-          },
-        ],
-        chart: {
-          height: 350,
-          type: "line",
-          background: "transparent",
-          zoom: { enabled: !1 },
-          toolbar: { show: !1 },
-        },
-        theme: { mode: colors.chartTheme },
-        stroke: {
-          show: !0,
-          curve: "smooth",
-          lineCap: "round",
-          colors: chartColors,
-          width: [3, 2, 3],
-          dashArray: [0, 0, 0],
-        },
-        dataLabels: { enabled: !1 },
-        responsive: [
-          {
-            breakpoint: 480,
-            options: { legend: { position: "bottom", offsetX: -10, offsetY: 0 } },
-          },
-        ],
-        markers: {
-          size: 4,
-          colors: base.primaryColor,
-          strokeColors: colors.borderColor,
-          strokeWidth: 2,
-          strokeOpacity: 0.9,
-          strokeDashArray: 0,
-          fillOpacity: 1,
-          discrete: [],
-          shape: "circle",
-          radius: 2,
-          offsetX: 0,
-          offsetY: 0,
-          onClick: void 0,
-          onDblClick: void 0,
-          showNullDataPoints: !0,
-          hover: { size: void 0, sizeOffset: 3 },
-        },
-        xaxis: {
-          type: "datetime",
-          categories: [
-            "01/01/2020 GMT",
-            "01/02/2020 GMT",
-            "01/03/2020 GMT",
-            "01/04/2020 GMT",
-            "01/05/2020 GMT",
-            "01/06/2020 GMT",
-            "01/07/2020 GMT",
-            "01/08/2020 GMT",
-            "01/09/2020 GMT",
-            "01/10/2020 GMT",
-            "01/11/2020 GMT",
-            "01/12/2020 GMT",
-            "01/13/2020 GMT",
-            "01/14/2020 GMT",
-            "01/15/2020 GMT",
-            "01/16/2020 GMT",
-            "01/17/2020 GMT",
-            "01/18/2020 GMT",
-          ],
-          labels: {
-            show: !0,
-            trim: !1,
-            minHeight: void 0,
-            maxHeight: 120,
-            style: {
-              colors: colors.mutedColor,
-              cssClass: "text-muted",
-              fontFamily: base.defaultFontFamily,
-            },
-          },
-          axisBorder: { show: !1 },
-        },
-        yaxis: {
-          labels: {
-            show: !0,
-            trim: !1,
-            offsetX: -10,
-            minHeight: void 0,
-            maxHeight: 120,
-            style: {
-              colors: colors.mutedColor,
-              cssClass: "text-muted",
-              fontFamily: base.defaultFontFamily,
-            },
-          },
-        },
-        legend: {
-          position: "top",
-          fontFamily: base.defaultFontFamily,
-          fontWeight: 400,
-          labels: { colors: colors.mutedColor, useSeriesColors: !1 },
-          markers: {
-            width: 10,
-            height: 10,
-            strokeWidth: 0,
-            strokeColor: colors.borderColor,
-            fillColors: chartColors,
-            radius: 6,
-            customHTML: void 0,
-            onClick: void 0,
-            offsetX: 0,
-            offsetY: 0,
-          },
-          itemMargin: { horizontal: 10, vertical: 0 },
-          onItemClick: { toggleDataSeries: !0 },
-          onItemHover: { highlightDataSeries: !0 },
-        },
-        grid: {
-          show: !0,
-          borderColor: colors.borderColor,
-          strokeDashArray: 0,
-          position: "back",
-          xaxis: { lines: { show: !1 } },
-          yaxis: { lines: { show: !0 } },
-          row: { colors: void 0, opacity: 0.5 },
-          column: { colors: void 0, opacity: 0.5 },
-          padding: { top: 0, right: 0, bottom: 0, left: 0 },
-        },
-      },
-      lineChartCtn = document.querySelector("#lineChart");
-    lineChartCtn &&
-      (lineChart = new ApexCharts(lineChartCtn, lineChartoptions)).render();
 
-    var columnChart,
-      columnChartoptions = {
-        series: [
-          {
-            name: "Bf",
-            data: [
-              32,
-              66,
-              44,
-              55,
-              41,
-              24,
-              67,
-              22,
-              43,
-              32,
-              66,
-              44,
-              55,
-              41,
-              24,
-              67,
-              22,
-              43,
-            ],
-          },
-          {
-            name: "Af",
-            data: [
-              7,
-              30,
-              13,
-              23,
-              20,
-              12,
-              8,
-              13,
-              27,
-              7,
-              30,
-              13,
-              23,
-              20,
-              12,
-              8,
-              13,
-              27,
-            ],
-          },
-        ],
-        chart: {
-          type: "bar",
-          height: 350,
-          stacked: !1,
-          columnWidth: "70%",
-          zoom: { enabled: !0 },
-          toolbar: { show: !1 },
-          background: "transparent",
-        },
-        dataLabels: { enabled: !1 },
-        theme: { mode: colors.chartTheme },
-        responsive: [
-          {
-            breakpoint: 480,
-            options: { legend: { position: "bottom", offsetX: -10, offsetY: 0 } },
-          },
-        ],
-        plotOptions: {
-          bar: {
-            horizontal: !1,
-            columnWidth: "40%",
-            radius: 30,
-            enableShades: !1,
-            endingShape: "rounded",
-          },
-        },
-        xaxis: {
-          type: "datetime",
-          categories: [
-            "01/01/2020 GMT",
-            "01/02/2020 GMT",
-            "01/03/2020 GMT",
-            "01/04/2020 GMT",
-            "01/05/2020 GMT",
-            "01/06/2020 GMT",
-            "01/07/2020 GMT",
-            "01/08/2020 GMT",
-            "01/09/2020 GMT",
-            "01/10/2020 GMT",
-            "01/11/2020 GMT",
-            "01/12/2020 GMT",
-            "01/13/2020 GMT",
-            "01/14/2020 GMT",
-            "01/15/2020 GMT",
-            "01/16/2020 GMT",
-            "01/17/2020 GMT",
-            "01/18/2020 GMT",
-          ],
-          labels: {
-            show: !0,
-            trim: !0,
-            minHeight: void 0,
-            maxHeight: 120,
-            style: {
-              colors: colors.mutedColor,
-              cssClass: "text-muted",
-              fontFamily: base.defaultFontFamily,
-            },
-          },
-          axisBorder: { show: !1 },
-        },
-        yaxis: {
-          labels: {
-            show: !0,
-            trim: !1,
-            offsetX: -10,
-            minHeight: void 0,
-            maxHeight: 120,
-            style: {
-              colors: colors.mutedColor,
-              cssClass: "text-muted",
-              fontFamily: base.defaultFontFamily,
-            },
-          },
-        },
-        legend: {
-          position: "top",
-          fontFamily: base.defaultFontFamily,
-          fontWeight: 400,
-          labels: { colors: colors.mutedColor, useSeriesColors: !1 },
-          markers: {
-            width: 10,
-            height: 10,
-            strokeWidth: 0,
-            strokeColor: "#fff",
-            fillColors: [extend.primaryColor, extend.primaryColorLighter],
-            radius: 6,
-            customHTML: void 0,
-            onClick: void 0,
-            offsetX: 0,
-            offsetY: 0,
-          },
-          itemMargin: { horizontal: 10, vertical: 0 },
-          onItemClick: { toggleDataSeries: !0 },
-          onItemHover: { highlightDataSeries: !0 },
-        },
-        fill: {
-          opacity: 1,
-          colors: [base.primaryColor, extend.primaryColorLighter],
-        },
-        grid: {
-          show: !0,
-          borderColor: colors.borderColor,
-          strokeDashArray: 0,
-          position: "back",
-          xaxis: { lines: { show: !1 } },
-          yaxis: { lines: { show: !0 } },
-          row: { colors: void 0, opacity: 0.5 },
-          column: { colors: void 0, opacity: 0.5 },
-          padding: { top: 0, right: 0, bottom: 0, left: 0 },
-        },
-      },
-      columnChartCtn = document.querySelector("#columnChart");
-    columnChartCtn &&
-      (columnChart = new ApexCharts(columnChartCtn, columnChartoptions)).render();
-
-    var gradientRadialChart,
-      gradientRadialOptions = {
-        series: [75],
-        chart: { height: 200, type: "radialBar", toolbar: { show: !1 } },
-        plotOptions: {
-          radialBar: {
-            startAngle: -135,
-            endAngle: 225,
-            hollow: {
-              margin: 0,
-              size: "70%",
-              background: colors.backgroundColor,
-              image: void 0,
-              imageOffsetX: 0,
-              imageOffsetY: 0,
-              position: "front",
-            },
-            track: {
-              background: colors.backgroundColor,
-              strokeWidth: "67%",
-              margin: 0,
-            },
-            dataLabels: {
-              show: !0,
-              name: {
-                fontSize: "0.875rem",
-                fontWeight: 400,
-                offsetY: -10,
-                show: !0,
-                color: colors.mutedColor,
-                fontFamily: base.defaultFontFamily,
-              },
-              value: {
-                formatter: function (e) {
-                  return parseInt(e);
-                },
-                color: colors.headingColor,
-                fontSize: "1.53125rem",
-                fontWeight: 700,
-                fontFamily: base.defaultFontFamily,
-                offsetY: 5,
-                show: !0,
-              },
-              total: {
-                show: !0,
-                fontSize: "0.875rem",
-                fontWeight: 400,
-                offsetY: -10,
-                color: colors.mutedColor,
-                fontFamily: base.defaultFontFamily,
-              },
-            },
-          },
-        },
-        fill: {
-          type: "gradient",
-          gradient: {
-            shade: "dark",
-            type: "horizontal",
-            shadeIntensity: 0.5,
-            gradientToColors: ["#ABE5A1"],
-            inverseColors: !0,
-            opacityFrom: 1,
-            opacityTo: 1,
-            stops: [0, 100],
-          },
-        },
-        stroke: { lineCap: "round" },
-        labels: ["Percent"],
-      },
-      gradientRadial = document.querySelector("#gradientRadial");
-    gradientRadial &&
-      (gradientRadialChart = new ApexCharts(
-        gradientRadial,
-        gradientRadialOptions
-      )).render();
-  </script>
   <script>
     $('.select2').select2(
       {

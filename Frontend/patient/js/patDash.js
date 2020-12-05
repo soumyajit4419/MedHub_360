@@ -38,7 +38,7 @@ $.ajax({
       $("#patsex").html(res.data.sex);
       $("#patuserid").html(res.data.userId);
       $("#patheight").html(`${res.data.height} Cms`);
-      $("#patweight").html(`${res.data.height} Kg`);
+      $("#patweight").html(`${res.data.weight} Kg`);
 
       sugararrf = [];
       sugararrpp = [];
