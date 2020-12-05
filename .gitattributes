@@ -1,2 +1,4 @@
 Frontend/css/*.css linguist-vendored
 Frontend/*.html linguist-vendored
+Frontend/patient/*.html linguist-vendored
+Frontend/doctor/*.html linguist-vendored
