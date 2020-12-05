@@ -130,7 +130,7 @@
           </li>
         </ul>
         <div class="btn-box w-100 mt-4 mb-1">
-          <a href="" target="_blank" class="btn mb-2 btn-primary btn-lg btn-block">
+          <a class="btn mb-2 btn-primary btn-lg btn-block" onclick="logout()">
             <i class="fe fe-log-out fe-12 mx-2"></i><span class="small">Log Out</span>
           </a>
         </div>
@@ -145,14 +145,17 @@
       <div class="container-fluid">
         <div class="w-50 mx-auto text-center justify-content-center py-5 my-5">
           <h2 class="page-title mb-0">Enter The User Id To view Details</h2>
+          <br />
           <!-- <p class="lead text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
           <form class="searchform searchform-lg">
             <input class="form-control form-control-lg bg-white rounded-pill pl-5" type="search" placeholder="Enter ID"
               aria-label="Search" id="userpatid">
-            <button type="button" class="btn mb-2 btn-primary mt-3" type="submit" onclick="getpatientdata()">Search</button>
+            <button type="button" class="btn mb-3 btn-primary mt-3" type="submit"
+              onclick="getpatientdata()">Search</button>
+            <div class="alert alert-danger" role="alert" id="error-alert"></div>
           </form>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" id="details">
           <div class="col-12">
             <div class="row">
               <div class="col-md-6 col-xl-3 mb-4">
@@ -166,7 +169,7 @@
                       </div>
                       <div class="col pr-0">
                         <p class="small text-muted mb-0">Name</p>
-                        <span class="h3 mb-0" id="patname">Ashish</span>
+                        <span class="h3 mb-0" id="patname"></span>
                       </div>
                     </div>
                   </div>
@@ -183,7 +186,7 @@
                       </div>
                       <div class="col pr-0">
                         <p class="small text-muted mb-0">User ID</p>
-                        <span class="h3 mb-0" id="patuserid">sgsf5665sf</span>
+                        <span class="h3 mb-0" id="patuserid"></span>
                       </div>
                     </div>
                   </div>
@@ -202,7 +205,7 @@
                         <p class="small text-muted mb-0">Age</p>
                         <div class="row align-items-center no-gutters">
                           <div class="col-auto">
-                            <span class="h3 mr-2 mb-0" id='patage'> 18 </span>
+                            <span class="h3 mr-2 mb-0" id='patage'></span>
                           </div>
                         </div>
                       </div>
@@ -221,7 +224,7 @@
                       </div>
                       <div class="col">
                         <p class="small text-muted mb-0">Sex</p>
-                        <span class="h3 mb-0" id='patsex'>Male</span>
+                        <span class="h3 mb-0" id='patsex'></span>
                       </div>
                     </div>
                   </div>
@@ -259,7 +262,7 @@
                         <p class="small text-muted mb-0">Height</p>
                         <div class="row align-items-center no-gutters">
                           <div class="col-auto">
-                            <span class="h3 mr-2 mb-0" id='patheight'> 128cms </span>
+                            <span class="h3 mr-2 mb-0" id='patheight'></span>
                           </div>
                         </div>
                       </div>
@@ -278,7 +281,7 @@
                       </div>
                       <div class="col">
                         <p class="small text-muted mb-0">Weight</p>
-                        <span class="h3 mb-0" id='patweight'>80kg</span>
+                        <span class="h3 mb-0" id='patweight'></span>
                       </div>
                     </div>
                   </div>

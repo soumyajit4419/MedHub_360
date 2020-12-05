@@ -1,3 +1,5 @@
+$("#details").hide();
+$("#error-alert").hide();
 const url = "http://127.0.0.1:3600";
 
 $.ajax({
@@ -21,15 +23,13 @@ $.ajax({
 });
 
 function getpatientdata() {
-
-  var userid= $("#userpatid").val();  
-  console.log(userid);
-  
-  if(userid==" ") return;
-
+  $("#error-alert").hide();
+  $("#details").hide();
+  var userid = $("#userpatid").val();
+  if (userid == " ") return;
   $.ajax({
     url: url + "/doc/getPatientData",
-    method: "GET",
+    method: "POST",
     crossDomain: true,
     headers: {
       "x-access-token": localStorage.getItem("token"),
@@ -39,7 +39,9 @@ function getpatientdata() {
     },
     success: function (res) {
       if (res.status !== 200) {
-        window.location = "../500.html";
+        console.log(res.message);
+        $("#error-alert").text(res.message);
+        $("#error-alert").show();
       } else if (res.status === 200) {
         console.log(res.data);
         var fName = res.data.name.split(" ");
@@ -56,34 +58,34 @@ function getpatientdata() {
         hg = [];
         rbc = [];
         var count = res.data.sugar.length;
-  
+
         $("#patcount").html(count);
-  
+
         var num = (count / 12) * 100;
         var n = num.toFixed(2);
-  
+
         all_dates_sugar = [];
         all_dates_blood = [];
-  
+
         for (var i = 0; i < res.data.sugar.length; i++) {
           sugararrf.push(res.data.sugar[i].bloodGlucoseF);
           sugararrpp.push(res.data.sugar[i].bloodGlucosePP);
         }
-  
+
         for (var i = 0; i < res.data.bloodCount.length; i++) {
           platelet.push(res.data.bloodCount[i].platelateCount);
           hg.push(res.data.bloodCount[i].hemoglobin);
           rbc.push(res.data.bloodCount[i].rbcCount);
         }
-  
+
         for (var i = 0; i < res.data.sugar.length; i++) {
           all_dates_sugar.push(res.data.sugar[i].date);
         }
-  
+
         for (var i = 0; i < res.data.bloodCount.length; i++) {
           all_dates_blood.push(res.data.bloodCount[i].date);
         }
-  
+
         // Sugar Chart
         var columnChart,
           columnChartoptions = {
@@ -133,7 +135,7 @@ function getpatientdata() {
                 trim: !0,
                 minHeight: void 0,
                 maxHeight: 120,
-  
+
                 style: {
                   colors: colors.mutedColor,
                   cssClass: "text-muted",
@@ -199,7 +201,7 @@ function getpatientdata() {
             columnChartCtn,
             columnChartoptions
           )).render();
-  
+
         // Blood Count Chart
         var lineChart,
           lineChartoptions = {
@@ -266,7 +268,7 @@ function getpatientdata() {
               labels: {
                 show: !0,
                 trim: !1,
-  
+
                 minHeight: void 0,
                 maxHeight: 120,
                 style: {
@@ -327,7 +329,7 @@ function getpatientdata() {
           lineChartCtn = document.querySelector("#lineChart");
         lineChartCtn &&
           (lineChart = new ApexCharts(lineChartCtn, lineChartoptions)).render();
-  
+
         //No of test chart
         var gradientRadialChart,
           gradientRadialOptions = {
@@ -405,7 +407,7 @@ function getpatientdata() {
             gradientRadial,
             gradientRadialOptions
           )).render();
-  
+        $("#details").show();
       }
     },
     error: function (err) {
@@ -413,4 +415,9 @@ function getpatientdata() {
       alert(err);
     },
   });
+}
+
+function logout() {
+  localStorage.clear();
+  window.location = "../index.html";
 }

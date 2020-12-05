@@ -145,7 +145,7 @@ router.get("/getUserData", verifyToken, (req, res) => {
 });
 
 // Get a patient details
-router.get(
+router.post(
   "/getPatientData",
   verifyToken,
   function (req, res, next) {

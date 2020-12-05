@@ -3,6 +3,7 @@ $("#errorAlert").hide();
 const url = "http://127.0.0.1:3600";
 
 function login() {
+  $("#errorAlert").hide();
   var userType = $("#inputUser").val();
   var email = $("#email").val();
   var password = $("#password").val();
@@ -24,9 +25,6 @@ function login() {
         if (res.status !== 200) {
           $("#errorAlert").text(res.message);
           $("#errorAlert").show();
-          setTimeout(function () {
-            window.location.reload();
-          }, 2000);
         } else if (res.status === 200) {
           localStorage.setItem("token", res.token);
           window.location = "doctor/docDash.html";

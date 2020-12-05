@@ -5,6 +5,9 @@ $("#successBtn").hide();
 const url = "http://127.0.0.1:3600";
 
 function register() {
+  $("#successAlert").hide();
+  $("#errorAlert").hide();
+  $("#successBtn").hide();
   var name = $("#name").val();
   var email = $("#email").val();
   var password = $("#password").val();
@@ -24,9 +27,6 @@ function register() {
   if (password != confirmPassword) {
     $("#errorAlert").text("Password Din't Match");
     $("#errorAlert").show();
-    setTimeout(function () {
-      window.location.reload();
-    }, 2000);
   }
 
   if (userType == "Doc") {
@@ -46,9 +46,6 @@ function register() {
         if (res.status !== 200) {
           $("#errorAlert").text(res.message);
           $("#errorAlert").show();
-          setTimeout(function () {
-            window.location.reload();
-          }, 2000);
         } else if (res.status === 200) {
           $("#successAlert").text(res.message);
           $("#successAlert").show();
@@ -77,9 +74,6 @@ function register() {
         if (res.status !== 200) {
           $("#errorAlert").text(res.message);
           $("#errorAlert").show();
-          setTimeout(function () {
-            window.location.reload();
-          }, 2000);
         } else if (res.status === 200) {
           $("#successAlert").text(res.message);
           $("#successAlert").show();
