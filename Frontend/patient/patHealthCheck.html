@@ -140,58 +140,120 @@
     <main role="main" class="main-content">
       <div class="container-fluid">
         <div class="row justify-content-center">
-          <div class="col-12">
+          <div class="col-4">
             <div class="row align-items-center my-4">
               <div class="col">
                 <h2 class="h3 mb-0 page-title text-center">Health Applications</h2>
               </div>
             </div>
             <div class="row" style="padding-top:5em">
-              <div class="col-md-4">
+              <div class="col-md-12">
                 <div class="card shadow mb-4">
                   <div class="card-body text-center">
                     <div class="avatar avatar-lg mt-4">
                       <a href="">
-                        <img src="./assets/avatars/face-4.jpg" alt="..." class="avatar-img rounded-circle">
+                        <img src="../assets/images/covid.jpg" height= "80"  width= " 80"alt="..." class="avatar-img rounded-circle">
                       </a>
                     </div>
                     <div class="card-text my-2">
-                      <strong class="card-title my-0">Bass Wendy </strong>
-                      <p class="small text-muted mb-0">Accumsan Consulting</p>
-                      <p class="small"><span class="badge badge-light text-muted">New York, USA</span></p>
+                      <strong class="card-title my-0">COVID-19 Symptom Checker</strong>
+                      <!-- <p class="small text-muted mb-0"></p>
+                      <p class="small"><span class="badge badge-light text-muted">New York, USA</span></p> -->
                     </div>
                   </div> <!-- ./card-text -->
                   <div class="card-footer">
                     <div class="row align-items-center justify-content-center">
                       <div class="col-auto">
                         <button type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal"
-                          data-target="#varyModal" data-whatever="@mdo">Check This</button>
+                          data-target="#varyModal" data-whatever="@mdo">Evaluate Yourself</button>
                         <div class="modal fade" id="varyModal" tabindex="-1" role="dialog"
                           aria-labelledby="varyModalLabel" aria-hidden="true">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="varyModalLabel">New message</h5>
+                                <h5 class="modal-title" id="varyModalLabel">COVID-19 Symptom Checker</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
                               <div class="modal-body">
                                 <form>
+                    
                                   <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="message-text" class="col-form-label">Message:</label>
-                                    <textarea class="form-control" id="message-text"></textarea>
-                                  </div>
+                                    
+                                    <label for="trip">Trip</label>
+                               
+                                    <select class="form-control select2" id="trip" required>
+                                      <option value="">Select Yes if you have the above symptom </option>
+                                      <option value=1>Yes</option>
+                                      <option value=0>No</option>
+                                     
+                                      </select>
+                                      </div>
+                                    <div class="form-group">
+                      
+                                        <label for="fever">Fever</label>
+                              
+                                        <select class="form-control select2" id="fever" required>
+                                          <option value="">Select Yes if you have the above symptom </option>
+                                          <option value=1>Yes</option>
+                                          <option value=0>No</option>
+                                         
+                                        </select>
+                                     </div>
+                                     <div class="form-group">
+                                      
+                                            <label for="iteyes">Itchy Eyes</label>
+                                        
+                                            <select class="form-control select2" id="iteyes" required>
+                                              <option value="">Select Yes if you have the above symptom </option>
+                                              <option value=1>Yes</option>
+                                              <option value=0>No</option>
+                                             
+                                              </select>
+                                      </div>
+                                      <div class="form-group">
+                                        
+                                                <label for="runnose">Running Nose</label>
+                                           
+                                                <select class="form-control select2" id="runnose" required>
+                                                  <option value="">Select Yes if you have the above symptom </option>
+                                                  <option value=1>Yes</option>
+                                                  <option value=0>No</option>
+                                                 
+                                                </select>
+                                      </div>
+                                      <div class="form-group">
+                                       
+                                        <label for="trbr">Trouble in Breathing</label>
+                                     
+                                        <select class="form-control select2" id="trbr" required>
+                                          <option value="">Select Yes if you have the above symptom </option>
+                                          <option value=1>Yes</option>
+                                          <option value=0>No</option>
+                                         
+                                        </select>
+                              </div>
+                              <div class="form-group">
+                                
+                                <label for="cough">Cough</label>
+                              
+                                <select class="form-control select2" id="cough" required>
+                                  <option value="">Select Yes if you have the above symptom </option>
+                                  <option value=1>Yes</option>
+                                  <option value=0>No</option>
+                                 
+                                </select>
+                      </div>
+                      <div class="col" style="padding-left: 2em;">
+                        <p class="text-muted" id="result"></p>
+                      </div> <!-- .col -->
+                                 <center>
+                                  <button type="button" class="btn mb-2 btn-primary" type="submit" onclick="predictdisease()">Predict Disease</button>
+                                </center>
                                 </form>
                               </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn mb-2 btn-primary">Send message</button>
-                              </div>
+
                             </div>
                           </div>
                         </div>
@@ -200,112 +262,7 @@
                   </div> <!-- /.card-footer -->
                 </div>
               </div> <!-- .col -->
-              <div class="col-md-4">
-                <div class="card shadow mb-4">
-                  <div class="card-body text-center">
-                    <div class="avatar avatar-lg mt-4">
-                      <a href="">
-                        <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
-                      </a>
-                    </div>
-                    <div class="card-text my-2">
-                      <strong class="card-title my-0">Leblanc Yoshio</strong>
-                      <p class="small text-muted mb-0">Tristique Ltd</p>
-                      <p class="small"><span class="badge badge-light text-muted">United Kingdom</span></p>
-                    </div>
-                  </div> <!-- ./card-text -->
-                  <div class="card-footer">
-                    <div class="row align-items-center justify-content-center">
-                      <div class="col-auto ">
-                        <button type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal"
-                          data-target="#varyModal" data-whatever="@mdo">Check This</button>
-                        <div class="modal fade" id="varyModal" tabindex="-1" role="dialog"
-                          aria-labelledby="varyModalLabel" aria-hidden="true">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="varyModalLabel">New message</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                <form>
-                                  <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="message-text" class="col-form-label">Message:</label>
-                                    <textarea class="form-control" id="message-text"></textarea>
-                                  </div>
-                                </form>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn mb-2 btn-primary">Send message</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div> <!-- /.card-footer -->
-                </div>
-              </div> <!-- .col -->
-              <div class="col-md-4">
-                <div class="card shadow mb-4">
-                  <div class="card-body text-center">
-                    <div class="avatar avatar-lg mt-4">
-                      <a href="">
-                        <img src="./assets/avatars/face-5.jpg" alt="..." class="avatar-img rounded-circle">
-                      </a>
-                    </div>
-                    <div class="card-text my-2">
-                      <strong class="card-title my-0">Higgins Uriah</strong>
-                      <p class="small text-muted mb-0">Suspendisse LLC</p>
-                      <p class="small"><span class="badge badge-light text-muted">Canada</span></p>
-                    </div>
-                  </div> <!-- ./card-text -->
-                  <div class="card-footer">
-                    <div class="row align-items-center justify-content-center">
-                      <div class="col-auto">
-                        <button type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal"
-                          data-target="#varyModal" data-whatever="@mdo">Check This</button>
-                        <div class="modal fade" id="varyModal" tabindex="-1" role="dialog"
-                          aria-labelledby="varyModalLabel" aria-hidden="true">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="varyModalLabel">New message</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                <form>
-                                  <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="message-text" class="col-form-label">Message:</label>
-                                    <textarea class="form-control" id="message-text"></textarea>
-                                  </div>
-                                </form>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn mb-2 btn-primary">Send message</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div> <!-- /.card-footer -->
-                </div>
-              </div> <!-- .col -->
+            
 
             </div> <!-- .row -->
           </div> <!-- .col-12 -->
