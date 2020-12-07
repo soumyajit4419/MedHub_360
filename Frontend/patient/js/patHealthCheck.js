@@ -1,4 +1,4 @@
-const url = "http://127.0.0.1:3600";
+const url = "https://health-automation-application.herokuapp.com";
 // const url1 = "http://127.0.0.1:5000";
 
 const url1 = "https://health-conona-detect.herokuapp.com";

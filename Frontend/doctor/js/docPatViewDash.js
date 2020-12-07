@@ -1,6 +1,6 @@
 $("#details").hide();
 $("#error-alert").hide();
-const url = "http://127.0.0.1:3600";
+const url = "https://health-automation-application.herokuapp.com";
 
 $.ajax({
   url: url + "/doc/verify",
