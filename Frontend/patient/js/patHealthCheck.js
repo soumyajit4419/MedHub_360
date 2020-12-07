@@ -1,5 +1,6 @@
 const url = "http://127.0.0.1:3600";
 const url1 = "http://127.0.0.1:5000";
+$("#resAlert").hide();
 
 $.ajax({
   url: url + "/user/verify",
@@ -26,29 +27,31 @@ function logout() {
   window.location = "../index.html";
 }
 
-function predictdisease(){
+function predictDisease() {
+  $("#resAlert").hide();
   var trip = $("#trip").val();
   var fever = $("#fever").val();
   var iteyes = $("#iteyes").val();
-  var runnose = $("runnose").val();
+  var runnose = $("#runnose").val();
   var trbr = $("#trbr").val();
   var cough = $("#cough").val();
-  
-  
+
+  if (trip == "") return;
+  if (fever == "") return;
+  if (iteyes == "") return;
+  if (runnose == "") return;
+  if (trbr == "") return;
+  if (cough == "") return;
+
   $.ajax({
     url: url1 + "/predict",
     method: "POST",
     crossDomain: true,
-    data :[
-      trip,
-      fever,
-      iteyes,
-      runnose,
-      trbr,
-      cough],
-    success: function (res){
+    data: [trip, fever, iteyes, runnose, trbr, cough],
+    success: function (res) {
       console.log(res);
-      $("#result").html(`Disease maybe ${res}`);
-    } 
-  })
+      $("#resAlert").html(`Disease maybe ${res}`);
+      $("#resAlert").show();
+    },
+  });
 }

@@ -140,25 +140,23 @@
     <main role="main" class="main-content">
       <div class="container-fluid">
         <div class="row justify-content-center">
-          <div class="col-4">
+          <div class="col-12">
             <div class="row align-items-center my-4">
               <div class="col">
                 <h2 class="h3 mb-0 page-title text-center">Health Applications</h2>
               </div>
             </div>
-            <div class="row" style="padding-top:5em">
-              <div class="col-md-12">
+            <div class="row justify-content-center" style="padding-top:5em">
+              <div class="col-md-4">
                 <div class="card shadow mb-4">
                   <div class="card-body text-center">
                     <div class="avatar avatar-lg mt-4">
                       <a href="">
-                        <img src="../assets/images/covid.jpg" height= "80"  width= " 80"alt="..." class="avatar-img rounded-circle">
+                        <img src="../assets/images/covid.png" alt="..." class="avatar-img rounded-circle">
                       </a>
                     </div>
                     <div class="card-text my-2">
-                      <strong class="card-title my-0">COVID-19 Symptom Checker</strong>
-                      <!-- <p class="small text-muted mb-0"></p>
-                      <p class="small"><span class="badge badge-light text-muted">New York, USA</span></p> -->
+                      <strong class="card-title my-0">Covid-19 Symptom Checker</strong>
                     </div>
                   </div> <!-- ./card-text -->
                   <div class="card-footer">
@@ -171,89 +169,77 @@
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="varyModalLabel">COVID-19 Symptom Checker</h5>
+                                <h5 class="modal-title" id="varyModalLabel">COVID-19 Symptom Checker
+                                </h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
                               <div class="modal-body">
-                                <form>
-                    
+                                <form onsubmit="event.preventDefault()">
+
                                   <div class="form-group">
-                                    
                                     <label for="trip">Trip</label>
-                               
                                     <select class="form-control select2" id="trip" required>
                                       <option value="">Select Yes if you have the above symptom </option>
                                       <option value=1>Yes</option>
                                       <option value=0>No</option>
-                                     
-                                      </select>
-                                      </div>
-                                    <div class="form-group">
-                      
-                                        <label for="fever">Fever</label>
-                              
-                                        <select class="form-control select2" id="fever" required>
-                                          <option value="">Select Yes if you have the above symptom </option>
-                                          <option value=1>Yes</option>
-                                          <option value=0>No</option>
-                                         
-                                        </select>
-                                     </div>
-                                     <div class="form-group">
-                                      
-                                            <label for="iteyes">Itchy Eyes</label>
-                                        
-                                            <select class="form-control select2" id="iteyes" required>
-                                              <option value="">Select Yes if you have the above symptom </option>
-                                              <option value=1>Yes</option>
-                                              <option value=0>No</option>
-                                             
-                                              </select>
-                                      </div>
-                                      <div class="form-group">
-                                        
-                                                <label for="runnose">Running Nose</label>
-                                           
-                                                <select class="form-control select2" id="runnose" required>
-                                                  <option value="">Select Yes if you have the above symptom </option>
-                                                  <option value=1>Yes</option>
-                                                  <option value=0>No</option>
-                                                 
-                                                </select>
-                                      </div>
-                                      <div class="form-group">
-                                       
-                                        <label for="trbr">Trouble in Breathing</label>
-                                     
-                                        <select class="form-control select2" id="trbr" required>
-                                          <option value="">Select Yes if you have the above symptom </option>
-                                          <option value=1>Yes</option>
-                                          <option value=0>No</option>
-                                         
-                                        </select>
-                              </div>
-                              <div class="form-group">
-                                
-                                <label for="cough">Cough</label>
-                              
-                                <select class="form-control select2" id="cough" required>
-                                  <option value="">Select Yes if you have the above symptom </option>
-                                  <option value=1>Yes</option>
-                                  <option value=0>No</option>
-                                 
-                                </select>
-                      </div>
-                      <div class="col" style="padding-left: 2em;">
-                        <p class="text-muted" id="result"></p>
-                      </div> <!-- .col -->
-                                 <center>
-                                  <button type="button" class="btn mb-2 btn-primary" type="submit" onclick="predictdisease()">Predict Disease</button>
-                                </center>
+                                    </select>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="fever">Fever</label>
+                                    <select class="form-control select2" id="fever" required>
+                                      <option value="">Select Yes if you have the above symptom </option>
+                                      <option value=1>Yes</option>
+                                      <option value=0>No</option>
+                                    </select>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="iteyes">Itchy Eyes</label>
+                                    <select class="form-control select2" id="iteyes" required>
+                                      <option value="">Select Yes if you have the above symptom </option>
+                                      <option value=1>Yes</option>
+                                      <option value=0>No</option>
+                                    </select>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="runnose">Running Nose</label>
+                                    <select class="form-control select2" id="runnose" required>
+                                      <option value="">Select Yes if you have the above symptom </option>
+                                      <option value=1>Yes</option>
+                                      <option value=0>No</option>
+                                    </select>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="trbr">Trouble in Breathing</label>
+                                    <select class="form-control select2" id="trbr" required>
+                                      <option value="">Select Yes if you have the above symptom </option>
+                                      <option value=1>Yes</option>
+                                      <option value=0>No</option>
+                                    </select>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="cough">Cough</label>
+                                    <select class="form-control select2" id="cough" required>
+                                      <option value="">Select Yes if you have the above symptom </option>
+                                      <option value=1>Yes</option>
+                                      <option value=0>No</option>
+                                    </select>
+                                  </div>
+                                  <center>
+                                    <button class="btn mb-2 btn-primary" type="submit"
+                                      onclick="predictDisease()">Predict Disease</button>
+                                  </center>
                                 </form>
                               </div>
-
+                              <div class="modal-footer justify-content-center">
+                                <div class="alert alert-dark text-center col-12" role="alert" id="resAlert"></div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -262,13 +248,13 @@
                   </div> <!-- /.card-footer -->
                 </div>
               </div> <!-- .col -->
-            
+
+
 
             </div> <!-- .row -->
           </div> <!-- .col-12 -->
         </div> <!-- .row -->
       </div> <!-- .container-fluid -->
-
     </main> <!-- main -->
   </div> <!-- .wrapper -->
   <script src="../js/lib/jquery.min.js"></script>
