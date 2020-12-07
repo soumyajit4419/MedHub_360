@@ -46,8 +46,9 @@ function predictDisease() {
   $.ajax({
     url: url1 + "/predict",
     method: "POST",
-    crossDomain: true,
-    data: [trip, fever, iteyes, runnose, trbr, cough],
+    contentType: "application/json",
+    dataType: "json",
+    data:JSON.stringify({values: [trip, fever, iteyes, runnose, trbr, cough]}),
     success: function (res) {
       console.log(res);
       $("#resAlert").html(`Disease maybe ${res}`);
