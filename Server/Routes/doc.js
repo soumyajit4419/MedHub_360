@@ -226,4 +226,33 @@ router.post("/resetPassword", verifyToken, function (req, res, next) {
   });
 });
 
+
+// Get all users details
+router.get("/getallUserData", verifyToken, (req, res) => {
+  
+
+  userData.find({}, {_id:0, sugar:1,bloodCount:1,name:1}, (err, users) => {
+    if (err) {
+      return res.json({ status: 500, message: "Server Error" });
+    }
+
+    return res.json({ status: 200, data: users });
+  });
+});
+
+
+// Get all doctors details
+router.get("/getallDocData", verifyToken, (req, res) => {
+  
+
+  docData.find({}, {_id:0, sugar:1,bloodCount:1,name:1}, (err, docs) => {
+    if (err) {
+      return res.json({ status: 500, message: "Server Error" });
+    }
+
+    return res.json({ status: 200, data: docs });
+  });
+});
+
+
 module.exports = router;
