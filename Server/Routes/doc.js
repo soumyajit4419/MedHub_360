@@ -2,6 +2,7 @@ const express = require("express");
 const verifyToken = require("../Utils/verifyToken");
 const docData = require("../Models/docDb");
 const userData = require("../Models/userDb");
+const bcrypt = require("bcryptjs");
 const router = express.Router();
 
 router.get("/verify", verifyToken, function (req, res, next) {
@@ -175,5 +176,54 @@ router.post(
     );
   }
 );
+
+//Reset Password
+router.post("/resetPassword", verifyToken, function (req, res, next) {
+  const id = req.userId;
+  docData.findById(id, function (err, user) {
+    if (err) {
+      return res.json({ status: 500, message: "Server Error" });
+    }
+    if (!user) {
+      return res.json({ status: 422, message: "User Not found" });
+    } else {
+      const password = req.body.password;
+      const newPassword = req.body.newPassword;
+
+      if (newPassword.length < 6) {
+        return res.json({ status: 422, message: "Invalid Password Length" });
+      }
+
+      bcrypt.compare(password, user.password, function (err, result) {
+        if (err) {
+          return res.json({ status: 500, message: "Internal Server Error" });
+        }
+
+        if (!result) {
+          return res.json({
+            status: 422,
+            message: "Previous Password Din't Match",
+          });
+        } else {
+          bcrypt.hash(newPassword, 6, function (err, newHashPassword) {
+            if (err) {
+              return res.json({
+                status: 500,
+                message: "Internal Server Error",
+              });
+            } else {
+              user.password = newHashPassword;
+              user.save();
+              return res.json({
+                status: 200,
+                message: "Password Updated Successfully",
+              });
+            }
+          });
+        }
+      });
+    }
+  });
+});
 
 module.exports = router;
