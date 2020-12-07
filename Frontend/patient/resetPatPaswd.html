@@ -140,7 +140,7 @@
     <main role="main" class="main-content">
       <div class="container-fluid">
         <div class="align-items-center h-100">
-          <form class="col-lg-5 col-md-5 col-10 mx-auto ">
+          <form class="col-lg-5 col-md-5 col-10 mx-auto " onsubmit="event.preventDefault()">
             <div class="mx-auto text-center my-4 text-center">
               <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="../index.html">
                 <svg version="1.1" id="logo" class="navbar-brand-img brand-md" xmlns="http://www.w3.org/2000/svg"
@@ -158,19 +158,21 @@
               password</p>
             <br />
             <div class="form-group">
-              <label for="oldPassword">Current Password</label>
-              <input type="password" id="oldPassword" class="form-control form-control-lg"
-                placeholder="Current Password" required="" autofocus="">
+              <label for="password">Current Password</label>
+              <input type="password" id="password" class="form-control form-control-lg" placeholder="Current Password"
+                required>
             </div>
             <div class="form-group">
               <label for="newPassword">New Password</label>
               <input type="password" id="newPassword" class="form-control form-control-lg" placeholder="New Password"
                 required>
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Reset Password</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="resetPassword()">Reset
+              Password</button>
             <br />
             <br />
-            <div class="alert alert-success" role="alert"> Password Reset Succesfully</div>
+            <div class="alert alert-success text-center" role="alert" id="successAlert"></div>
+            <div class="alert alert-danger text-center" role="alert" id="errorAlert"></div>
           </form>
         </div>
       </div> <!-- .container-fluid -->

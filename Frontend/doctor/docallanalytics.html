@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="favicon.ico">
-  <title>My Dashboard</title>
+  <title>Analytics Dashboard</title>
   <!-- Simple bar CSS -->
   <link rel="stylesheet" href="../css/simplebar.css">
   <!-- Fonts CSS -->
@@ -110,8 +110,8 @@
               <span class="ml-3 item-text">File Manager</span>
             </a>
             <ul class="collapse list-unstyled pl-4 w-100" id="fileman">
-              <a class="nav-link pl-3" href="./docFileupload.html"><span class="ml-1">Files Upload</span></a>
-              <a class="nav-link pl-3" href="./files-grid.html"><span class="ml-1">Files Viewer</span></a>
+              <a class="nav-link pl-3" href="./docFileBlood.html"><span class="ml-1">Upload Heamogloin Report</span></a>
+              <a class="nav-link pl-3" href="./docFileSugar.html"><span class="ml-1">Upload Sugar Report</span></a>
             </ul>
           </li>
         </ul>
@@ -143,20 +143,19 @@
     <!--########## -->
     <main role="main" class="main-content">
       <div class="container-fluid">
+        <h1 class="h1 text-center">Data Analytics</h1>
         <div class="row justify-content-center">
           <div class="col-12">
-            
-            
+
             <!-- Bar charts-->
             <div class="row align-items-center my-2">
               <div class="col-auto ml-auto">
-                
               </div>
             </div>
             <div class="row my-4">
               <div class="col-md-12">
                 <div class="chart-box">
-                  <h2 class="h2 text-center">Average Blood Glucose Levels of Patients</h2>
+                  <h3 class="h3 text-center">Average Blood Glucose Levels of Patients</h3>
                   <div id="columnChartpat"></div>
                 </div>
               </div> <!-- .col -->
@@ -165,37 +164,36 @@
             <br />
             <!-- Line charts-->
             <div class="my-4">
-              <h2 class="h2 text-center">Average Blood Count Levels of Patients</h2>
+              <h3 class="h3 text-center">Average Blood Count Levels of Patients</h3>
               <div id="lineChartpat"></div>
             </div>
 
             <br />
-             <!-- Bar charts-->
+            <!-- Bar charts-->
             <div class="my-4">
-              <h2 class="h2 text-center">Average Tests Done by the Patients</h2>
+              <h3 class="h3 text-center">Average Tests Done by the Patients</h3>
               <div id="barChartpat"></div>
             </div>
 
 
             <!-- info small box -->
-            
           </div>
         </div> <!-- .row -->
 
         <div class="row justify-content-center">
           <div class="col-12">
-            
-            
+
+
             <!-- Bar charts-->
             <div class="row align-items-center my-2">
               <div class="col-auto ml-auto">
-                
+
               </div>
             </div>
             <div class="row my-4">
               <div class="col-md-12">
                 <div class="chart-box">
-                  <h2 class="h2 text-center">Average Blood Glucose Levels of Doctors</h2>
+                  <h3 class="h3 text-center">Average Blood Glucose Levels of Doctors</h3>
                   <div id="columnChartdoc"></div>
                 </div>
               </div> <!-- .col -->
@@ -204,55 +202,55 @@
             <br />
             <!-- Line charts-->
             <div class="my-4">
-              <h2 class="h2 text-center">Average Blood Count Levels of Doctors</h2>
+              <h3 class="h3 text-center">Average Blood Count Levels of Doctors</h3>
               <div id="lineChartdoc"></div>
             </div>
 
             <br />
-           <!-- Bar charts-->
+            <!-- Bar charts-->
             <div class="my-4">
-              <h2 class="h2 text-center">Average Tests Done by the Doctors</h2>
+              <h3 class="h3 text-center">Average Tests Done by the Doctors</h3>
               <div id="barChartdoc"></div>
 
-    
-            <!-- info small box -->
-            
-          </div>
-        </div> <!-- .row -->
-      </div> <!-- .container-fluid -->
 
-      <!--########## -->
-      <!-- Modal Body -->
-      <!--########## -->
-      <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="defaultModalLabel">View Dashboard</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+              <!-- info small box -->
+
             </div>
-            <div class="modal-body px-5">
-              <div class="row align-items-center">
-                <div class="col-6 text-center">
-                  <div class="squircle bg-primary justify-content-center">
-                    <i class="fe fe-users fe-32 align-self-center text-white"></i>
+          </div> <!-- .row -->
+        </div> <!-- .container-fluid -->
+
+        <!--########## -->
+        <!-- Modal Body -->
+        <!--########## -->
+        <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog"
+          aria-labelledby="defaultModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="defaultModalLabel">View Dashboard</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body px-5">
+                <div class="row align-items-center">
+                  <div class="col-6 text-center">
+                    <div class="squircle bg-primary justify-content-center">
+                      <i class="fe fe-users fe-32 align-self-center text-white"></i>
+                    </div>
+                    <p>Users</p>
                   </div>
-                  <p>Users</p>
-                </div>
-                <div class="col-6 text-center">
-                  <div class="squircle bg-primary justify-content-center">
-                    <i class="fe fe-activity fe-32 align-self-center text-white"></i>
+                  <div class="col-6 text-center">
+                    <div class="squircle bg-primary justify-content-center">
+                      <i class="fe fe-activity fe-32 align-self-center text-white"></i>
+                    </div>
+                    <p>Activity</p>
                   </div>
-                  <p>Activity</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
     </main> <!-- main -->
   </div> <!-- .wrapper -->
   <script src="../js/lib/jquery.min.js"></script>
@@ -278,7 +276,6 @@
   <script src="../js/lib/gauge.min.js"></script>
   <script src="../js/lib/jquery.sparkline.min.js"></script>
   <script src="../js/lib/apexcharts.min.js"></script>
-  <!-- <script src="../js/apexcharts.custom.js"></script> -->
   <script src='../js/lib/jquery.mask.min.js'></script>
   <script src='../js/lib/select2.min.js'></script>
   <script src='../js/lib/jquery.steps.min.js'></script>
@@ -287,7 +284,7 @@
   <script src='../js/lib/dropzone.min.js'></script>
   <script src='../js/lib/uppy.min.js'></script>
   <script src='../js/lib/quill.min.js'></script>
- 
+
   <script>
     $('.select2').select2(
       {

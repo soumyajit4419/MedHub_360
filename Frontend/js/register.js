@@ -8,6 +8,7 @@ function register() {
   $("#successAlert").hide();
   $("#errorAlert").hide();
   $("#successBtn").hide();
+
   var name = $("#name").val();
   var email = $("#email").val();
   var password = $("#password").val();

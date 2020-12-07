@@ -48,9 +48,6 @@ function login() {
         if (res.status !== 200) {
           $("#errorAlert").text(res.message);
           $("#errorAlert").show();
-          setTimeout(function () {
-            window.location.reload();
-          }, 2000);
         } else if (res.status === 200) {
           localStorage.setItem("token", res.token);
           window.location = "patient/patDash.html";

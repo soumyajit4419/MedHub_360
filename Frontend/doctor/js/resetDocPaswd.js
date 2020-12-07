@@ -1,4 +1,6 @@
 const url = "http://127.0.0.1:3600";
+$("#errorAlert").hide();
+$("#successAlert").hide();
 
 $.ajax({
   url: url + "/doc/verify",
@@ -23,4 +25,44 @@ $.ajax({
 function logout() {
   localStorage.clear();
   window.location = "../index.html";
+}
+
+function resetPassword() {
+  $("#errorAlert").hide();
+  $("#successAlert").hide();
+
+  var password = $("#password").val();
+  var newPassword = $("#newPassword").val();
+
+  if (password == "") return;
+  if (newPassword == "") return;
+
+  $.ajax({
+    url: url + "/doc/resetPassword",
+    method: "POST",
+    crossDomain: true,
+    headers: {
+      "x-access-token": localStorage.getItem("token"),
+    },
+    data: {
+      password: password,
+      newPassword: newPassword,
+    },
+    success: function (res) {
+      if (res.status !== 200) {
+        $("#errorAlert").text(res.message);
+        $("#errorAlert").show();
+      } else if (res.status === 200) {
+        $("#successAlert").text(res.message);
+        $("#successAlert").show();
+        setInterval(function () {
+          window.location.reload();
+        }, 2000);
+      }
+    },
+    error: function (err) {
+      console.log(err);
+      alert(err);
+    },
+  });
 }
