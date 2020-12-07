@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico">
+  <title>Blood Report Upload</title>
+  <!-- Simple bar CSS -->
+  <link rel="stylesheet" href="../css/simplebar.css">
+  <!-- Fonts CSS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Icons CSS -->
+  <link rel="stylesheet" href="../css/feather.css">
+  <link rel="stylesheet" href="../css/select2.css">
+  <link rel="stylesheet" href="../css/dropzone.css">
+  <link rel="stylesheet" href="../css/uppy.min.css">
+  <link rel="stylesheet" href="../css/jquery.steps.css">
+  <link rel="stylesheet" href="../css/jquery.timepicker.css">
+  <link rel="stylesheet" href="../css/quill.snow.css">
+  <!-- Date Range Picker CSS -->
+  <link rel="stylesheet" href="../css/daterangepicker.css">
+  <!-- App CSS -->
+  <link rel="stylesheet" href="../css/app-light.css" id="lightTheme" disabled>
+  <link rel="stylesheet" href="../css/app-dark.css" id="darkTheme">
+  <!-- Tessract Ocr -->
+  <script src='https://unpkg.com/tesseract.js@v2.0.0-alpha.13/dist/tesseract.min.js'></script>
+</head>
+
+<body class="vertical  dark ">
+  <div class="wrapper">
+
+    <!--########## -->
+    <!-- Navbar-->
+    <!--########## -->
+    <nav class="topnav navbar navbar-light">
+      <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
+        <i class="fe fe-menu navbar-toggler-icon"></i>
+      </button>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link text-muted my-2" href="#" id="modeSwitcher" data-mode="dark">
+            <i class="fe fe-sun fe-16"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
+            <span class="fe fe-grid fe-16"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+      <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+        <i class="fe fe-x"><span class="sr-only"></span></i>
+      </a>
+      <nav class="vertnav navbar navbar-light">
+        <!-- nav bar -->
+        <div class="w-100 mb-4 d-flex">
+          <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="../index.html">
+            <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
+              <g>
+                <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
+                <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
+                <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
+              </g>
+            </svg>
+          </a>
+        </div>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+          <li class="nav-item dropdown">
+            <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-activity fe-16"></i>
+              <span class="ml-3 item-text">Analytics</span><span class="sr-only">(current)</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="dashboard">
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./docDash.html"><span class="ml-1 item-text">My
+                    Analytics</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./docPatViewDash.html"><span class="ml-1 item-text">User
+                    Analytics</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./docallanalytics.html"><span class="ml-1 item-text">Group
+                    Analytics</span></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p class="text-muted nav-heading mt-4 mb-1">
+          <span>Personal</span>
+        </p>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+          <li class="nav-item dropdown">
+            <a href="#profile" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-user fe-16"></i>
+              <span class="ml-3 item-text">Profile</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="profile">
+              <a class="nav-link pl-3" href="./docProfile.html"><span class="ml-1">My Profile</span></a>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#fileman" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-folder fe-16"></i>
+              <span class="ml-3 item-text">File Manager</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="fileman">
+              <a class="nav-link pl-3" href="./docFileBlood.html"><span class="ml-1">Upload Heamogloin Report</span></a>
+              <a class="nav-link pl-3" href="./docFileSugar.html"><span class="ml-1">Upload Sugar Report</span></a>
+            </ul>
+          </li>
+        </ul>
+        <p class="text-muted nav-heading mt-4 mb-1">
+          <span>Security</span>
+        </p>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+          <li class="nav-item dropdown">
+            <a href="#auth" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-shield fe-16"></i>
+              <span class="ml-3 item-text">Authentication</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="auth">
+              <a class="nav-link pl-3" href="./resetDocPaswd.html"><span class="ml-1">Reset Password</span></a>
+            </ul>
+          </li>
+        </ul>
+        <div class="btn-box w-100 mt-4 mb-1">
+          <a class="btn mb-2 btn-primary btn-lg btn-block" onclick="logout()">
+            <i class="fe fe-log-out fe-12 mx-2"></i><span class="small">Log Out</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <!--########## -->
+    <!-- Main Body -->
+    <!--########## -->
+    <main role="main" class="main-content">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <h2 class="page-title text-center">File Uploads</h2>
+            <br />
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <div class="card shadow mb-4">
+                  <div class="card-header text-center">
+                    <strong>Upload Hemoglobin Report</strong>
+                  </div>
+                  <div class="card-body">
+                    <div class="row ">
+                      <input type="file" name="file-1" id="file-1" class="inputfile" style="opacity: 0;" />
+                      <div class="col-md-12 text-center">
+                        <label for="file-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17"
+                            viewBox="0 0 20 17">
+                            <path
+                              d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z" />
+                          </svg> &nbsp;<span style="cursor:pointer">Choose a file&hellip;</span></label>
+                      </div>
+                      <div class="col-12 col-md-12">
+                        <div class="image-container"><img id="selected-image" class="col-12 p-0"></div>
+                      </div>
+                      <div class="col-12 col-md-12">
+                        <i id="arrow-right" class="fas fa-arrow-right d-none d-md-block"></i>
+                        <i id="arrow-down" class="fas fa-arrow-down d-block d-md-none"></i>
+                      </div>
+                      <div class="col-12 col-md-12 text-muted">
+                        <div id="log">
+                          <span id="startPre" class="text-muted">
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div> <!-- .card-body -->
+                </div> <!-- .card -->
+              </div> <!-- .col -->
+            </div> <!-- .row -->
+          </div>
+          <div class="col-12 text-center">
+            <button type="button" class="btn mb-2 btn-outline-success" id="bloodUpload" onclick="uploadData()"><span
+                class="fe fe-upload-cloud fe-16">&nbsp</span>
+              Upload Data</button>
+          </div>
+          <div class="col-7 ">
+            <div class="alert alert-dark text-center" role="alert" id="resAlert"></div>
+          </div>
+        </div> <!-- .row -->
+      </div> <!-- .container-fluid -->
+
+
+
+      <!--########## -->
+      <!-- Modal Body -->
+      <!--########## -->
+      <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="defaultModalLabel">View Dashboard</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body px-5">
+              <div class="row align-items-center">
+                <div class="col-6 text-center">
+                  <div class="squircle bg-primary justify-content-center">
+                    <i class="fe fe-users fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>Users</p>
+                </div>
+                <div class="col-6 text-center">
+                  <div class="squircle bg-primary justify-content-center">
+                    <i class="fe fe-activity fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>Activity</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main> <!-- main -->
+  </div> <!-- .wrapper -->
+  <script src="../js/lib/jquery.min.js"></script>
+  <script src="../js/lib/popper.min.js"></script>
+  <script src="../js/lib/moment.min.js"></script>
+  <script src="../js/lib/bootstrap.min.js"></script>
+  <script src="../js/lib/simplebar.min.js"></script>
+  <script src='../js/lib/daterangepicker.js'></script>
+  <script src='../js/lib/jquery.stickOnScroll.js'></script>
+  <script src="../js/lib/tinycolor-min.js"></script>
+  <script src="../js/lib/config.js"></script>
+  <script src='../js/lib/jquery.mask.min.js'></script>
+  <script src='../js/lib/select2.min.js'></script>
+  <script src='../js/lib/jquery.steps.min.js'></script>
+  <script src='../js/lib/jquery.validate.min.js'></script>
+  <script src='../js/lib/jquery.timepicker.js'></script>
+  <script src='../js/lib/uppy.min.js'></script>
+  <script src='../js/lib/quill.min.js'></script>
+  <script src="../js/lib/apps.js"></script>
+  <script src="./js/tesseract-ocr-blood.js"></script>
+</body>
+
+</html>
