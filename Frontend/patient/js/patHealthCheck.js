@@ -1,5 +1,4 @@
 const url = "https://health-automation-application.herokuapp.com";
-// const url1 = "http://127.0.0.1:5000";
 const url1 = "https://health-conona-detect.herokuapp.com";
 
 $("#resAlert").hide();
@@ -44,15 +43,16 @@ function predictDisease() {
   if (runnose == "") return;
   if (trbr == "") return;
   if (cough == "") return;
-
+  var data = JSON.stringify({
+    values: [trip, fever, iteyes, runnose, trbr, cough],
+  });
+  console.log(data);
   $.ajax({
     url: url1 + "/predict",
     method: "POST",
     crossDomain: true,
     dataType: "json",
-    data: JSON.stringify({
-      values: [trip, fever, iteyes, runnose, trbr, cough],
-    }),
+    data: data,
     success: function (res) {
       console.log(res);
       $("#resAlert").html(`Disease maybe ${res}`);
