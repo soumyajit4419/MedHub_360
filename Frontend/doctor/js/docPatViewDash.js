@@ -1,6 +1,7 @@
+const url = "https://health-automation-application.herokuapp.com";
+
 $("#details").hide();
 $("#error-alert").hide();
-const url = "https://health-automation-application.herokuapp.com";
 
 $.ajax({
   url: url + "/doc/verify",
@@ -26,7 +27,8 @@ function getpatientdata() {
   $("#error-alert").hide();
   $("#details").hide();
   var userid = $("#userpatid").val();
-  if (userid == " ") return;
+  if (userid == "") return;
+
   $.ajax({
     url: url + "/doc/getPatientData",
     method: "POST",

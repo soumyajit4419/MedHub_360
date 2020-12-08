@@ -1,13 +1,16 @@
+const url = "https://health-automation-application.herokuapp.com";
+
 $("#successAlert").hide();
 $("#errorAlert").hide();
 $("#successBtn").hide();
-
-const url = "https://health-automation-application.herokuapp.com";
+$("#spinner").hide();
 
 function register() {
   $("#successAlert").hide();
   $("#errorAlert").hide();
   $("#successBtn").hide();
+  $("#signUp").prop("disabled", true);
+  $("#spinner").show();
 
   var name = $("#name").val();
   var email = $("#email").val();
@@ -47,10 +50,14 @@ function register() {
         if (res.status !== 200) {
           $("#errorAlert").text(res.message);
           $("#errorAlert").show();
+          $("#signUp").prop("disabled", false);
+          $("#spinner").hide();
         } else if (res.status === 200) {
           $("#successAlert").text(res.message);
           $("#successAlert").show();
           $("#successBtn").show();
+          $("#signUp").prop("disabled", false);
+          $("#spinner").hide();
         }
       },
       error: function (err) {
@@ -75,10 +82,14 @@ function register() {
         if (res.status !== 200) {
           $("#errorAlert").text(res.message);
           $("#errorAlert").show();
+          $("#signUp").prop("disabled", false);
+          $("#spinner").hide();
         } else if (res.status === 200) {
           $("#successAlert").text(res.message);
           $("#successAlert").show();
           $("#successBtn").show();
+          $("#signUp").prop("disabled", false);
+          $("#spinner").hide();
         }
       },
       error: function (err) {

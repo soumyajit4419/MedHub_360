@@ -1,6 +1,7 @@
 const url = "https://health-automation-application.herokuapp.com";
 $("#errorAlert").hide();
 $("#successAlert").hide();
+$("#spinner").hide();
 
 $.ajax({
   url: url + "/doc/verify",
@@ -30,7 +31,8 @@ function logout() {
 function resetPassword() {
   $("#errorAlert").hide();
   $("#successAlert").hide();
-
+  $("#rset").prop("disabled", true);
+  $("#spinner").show();
   var password = $("#password").val();
   var newPassword = $("#newPassword").val();
 
@@ -52,6 +54,8 @@ function resetPassword() {
       if (res.status !== 200) {
         $("#errorAlert").text(res.message);
         $("#errorAlert").show();
+        $("#rset").prop("disabled", false);
+        $("#spinner").hide();
       } else if (res.status === 200) {
         $("#successAlert").text(res.message);
         $("#successAlert").show();

@@ -1,8 +1,11 @@
-$("#errorAlert").hide();
-
 const url = "https://health-automation-application.herokuapp.com";
 
+$("#spinner").hide();
+$("#errorAlert").hide();
+
 function login() {
+  $("#lgn").prop("disabled", true);
+  $("#spinner").show();
   $("#errorAlert").hide();
   var userType = $("#inputUser").val();
   var email = $("#email").val();
@@ -25,6 +28,8 @@ function login() {
         if (res.status !== 200) {
           $("#errorAlert").text(res.message);
           $("#errorAlert").show();
+          $("#lgn").prop("disabled", false);
+          $("#spinner").hide();
         } else if (res.status === 200) {
           localStorage.setItem("token", res.token);
           window.location = "doctor/docDash.html";
@@ -48,6 +53,8 @@ function login() {
         if (res.status !== 200) {
           $("#errorAlert").text(res.message);
           $("#errorAlert").show();
+          $("#lgn").prop("disabled", false);
+          $("#spinner").hide();
         } else if (res.status === 200) {
           localStorage.setItem("token", res.token);
           window.location = "patient/patDash.html";

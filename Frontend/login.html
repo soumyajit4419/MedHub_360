@@ -60,7 +60,9 @@
           <label>
             <input type="checkbox" value="remember-me"> Stay logged in </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="login()">Let me in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="login()" id="lgn">
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" id="spinner"></span>
+          Let me in</button>
         <br />
         <div class="alert alert-danger text-center" role="alert" id="errorAlert"></div>
       </form>

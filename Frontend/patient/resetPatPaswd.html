@@ -167,8 +167,9 @@
               <input type="password" id="newPassword" class="form-control form-control-lg" placeholder="New Password"
                 required>
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="resetPassword()">Reset
-              Password</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="resetPassword()" id="rset">
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" id="spinner"></span>
+              Reset Password</button>
             <br />
             <br />
             <div class="alert alert-success text-center" role="alert" id="successAlert"></div>

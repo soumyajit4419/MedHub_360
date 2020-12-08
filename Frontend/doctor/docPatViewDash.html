@@ -147,11 +147,10 @@
           <h2 class="page-title mb-0">Enter The User Id To view Details</h2>
           <br />
           <!-- <p class="lead text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
-          <form class="searchform searchform-lg">
+          <form class="searchform searchform-lg" onsubmit="event.preventDefault()">
             <input class="form-control form-control-lg bg-white rounded-pill pl-5" type="search" placeholder="Enter ID"
-              aria-label="Search" id="userpatid">
-            <button type="button" class="btn mb-3 btn-primary mt-3" type="submit"
-              onclick="getpatientdata()">Search</button>
+              aria-label="Search" id="userpatid" required>
+            <button class="btn mb-3 btn-primary mt-3" type="submit" onclick="getpatientdata()">Search</button>
             <div class="alert alert-danger" role="alert" id="error-alert"></div>
           </form>
         </div>
@@ -292,7 +291,7 @@
             <!-- Bar charts-->
             <div class="row align-items-center my-2">
               <div class="col-auto ml-auto">
-                
+
               </div>
             </div>
             <div class="row my-4">
