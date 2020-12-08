@@ -10,10 +10,12 @@ cors = CORS(app)
 
 model = pickle.load(open('model1.pkl', 'rb'))
 
-# @app.route('/', methods=['GET'])
 
-# def index():
-#     return json.dumps({'success':True}), 200, {'ContentType':'application/json'} 
+@app.route('/', methods=['GET'])
+@cross_origin()
+def index():
+    return jsonify({'msg': 'Success'})
+
 
 @app.route('/predict', methods=['POST'])
 @cross_origin()
