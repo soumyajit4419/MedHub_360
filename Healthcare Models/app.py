@@ -21,9 +21,8 @@ def index():
 @cross_origin()
 def predict():
 
-    data = request.get_json()
-
-    new_list = data["values"]
+    data = request.get_json(force=True)
+    new_list = data['values']
 
     int_features = [int(x) for x in new_list]
 
