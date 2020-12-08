@@ -32,14 +32,15 @@ function logout() {
 function resetPassword() {
   $("#errorAlert").hide();
   $("#successAlert").hide();
-  $("#rset").prop("disabled", true);
-  $("#spinner").show();
 
   var password = $("#password").val();
   var newPassword = $("#newPassword").val();
 
   if (password == "") return;
   if (newPassword == "") return;
+
+  $("#rset").prop("disabled", true);
+  $("#spinner").show();
 
   $.ajax({
     url: url + "/user/resetPassword",
@@ -58,7 +59,6 @@ function resetPassword() {
         $("#errorAlert").show();
         $("#rset").prop("disabled", false);
         $("#spinner").hide();
-        
       } else if (res.status === 200) {
         $("#successAlert").text(res.message);
         $("#successAlert").show();

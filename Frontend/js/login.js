@@ -4,9 +4,8 @@ $("#spinner").hide();
 $("#errorAlert").hide();
 
 function login() {
-  $("#lgn").prop("disabled", true);
-  $("#spinner").show();
   $("#errorAlert").hide();
+
   var userType = $("#inputUser").val();
   var email = $("#email").val();
   var password = $("#password").val();
@@ -14,6 +13,9 @@ function login() {
   if (userType == "") return;
   if (email == "") return;
   if (password == "") return;
+
+  $("#lgn").prop("disabled", true);
+  $("#spinner").show();
 
   if (userType == "Doc") {
     $.ajax({

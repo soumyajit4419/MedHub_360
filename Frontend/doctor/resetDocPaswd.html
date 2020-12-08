@@ -53,14 +53,7 @@
         <!-- nav bar -->
         <div class="w-100 mb-4 d-flex">
           <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="../index.html">
-            <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
-              <g>
-                <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
-                <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
-                <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
-              </g>
-            </svg>
+            <img src="../assets/logo.svg" class="img-fluid " id="logo" style="height: 80%; width: 50%;" />
           </a>
         </div>
         <ul class="navbar-nav flex-fill w-100 mb-2">
@@ -141,14 +134,7 @@
           <form class="col-lg-5 col-md-5 col-10 mx-auto" onsubmit="event.preventDefault()">
             <div class="mx-auto text-center my-4  text-center">
               <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="../index.html">
-                <svg version="1.1" id="logo" class="navbar-brand-img brand-md" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
-                  <g>
-                    <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
-                    <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
-                    <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
-                  </g>
-                </svg>
+                <img src="../assets/logo.svg" class="img-fluid " id="logo" style="height: 25%; width: 25%;" />
               </a>
               <h2 class="my-3">Reset Password</h2>
             </div>
@@ -175,6 +161,40 @@
           </form>
         </div>
       </div> <!-- .container-fluid -->
+
+      <!--########## -->
+      <!-- Modal Body -->
+      <!--########## -->
+      <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="defaultModalLabel">View Dashboard</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body px-5">
+              <div class="row align-items-center">
+                <div class="col-6 text-center">
+                  <div class="squircle bg-primary justify-content-center">
+                    <i class="fe fe-users fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>Users</p>
+                </div>
+                <div class="col-6 text-center">
+                  <div class="squircle bg-primary justify-content-center">
+                    <i class="fe fe-activity fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>Activity</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </main> <!-- main -->
   </div> <!-- .wrapper -->
 

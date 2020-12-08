@@ -9,8 +9,6 @@ function register() {
   $("#successAlert").hide();
   $("#errorAlert").hide();
   $("#successBtn").hide();
-  $("#signUp").prop("disabled", true);
-  $("#spinner").show();
 
   var name = $("#name").val();
   var email = $("#email").val();
@@ -27,6 +25,9 @@ function register() {
   if (age == "") return;
   if (sex == "") return;
   if (userType == "") return;
+
+  $("#signUp").prop("disabled", true);
+  $("#spinner").show();
 
   if (password != confirmPassword) {
     $("#errorAlert").text("Password Din't Match");

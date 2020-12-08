@@ -31,13 +31,15 @@ function logout() {
 function resetPassword() {
   $("#errorAlert").hide();
   $("#successAlert").hide();
-  $("#rset").prop("disabled", true);
-  $("#spinner").show();
+
   var password = $("#password").val();
   var newPassword = $("#newPassword").val();
 
   if (password == "") return;
   if (newPassword == "") return;
+
+  $("#rset").prop("disabled", true);
+  $("#spinner").show();
 
   $.ajax({
     url: url + "/doc/resetPassword",

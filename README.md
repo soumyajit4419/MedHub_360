@@ -5,68 +5,48 @@
 ### [YouTube Link]()
 
 [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 
-# _Automating Healthcare_
+# 📱 _Automating Healthcare_ 🏥
 
-_**Our Mission is to automate Healthcare and make Health facilities available to everyone regardless of their limitations**_ <br />
-Our Goals :
+_**Connecting Doctors and Patients and making hassle free strorage and access to medical information from anywhere**_ <br />
 
-1.  Automate Healthcare Medical Appointments
-2.  Online Disease Severity Prediction based on input symptoms through AI enabled chat-bots
-3.  Online Medical Document Storage for Doctor-Patient Interactions
-4.  e-Ambulance Tracking
+### 🎯 Our Goals :
 
-### Module-Wise Description
+1.  Extract, store and retrieve medical information from `Medical Reports` using `OCR`.
+2.  Display the information online `Graphically` for the use of `Patients` as well as `Doctors` only with `Authorised Access`.
+3.  Disease prediction from existing medical records using `ML-Models`, to `Caution Patients and Recommend` them for `Check-Ups.`
+4.  Giving an complete health `Analytics` to doctors of `Patients` as well as `Doctors` preseving user privacy.
 
-_**Registration**_ <br/>
-The web application would have a facility for the user's to register as either doctors or patients. Both of them would have access to specific features of the application.
-The hospitals could manage the patient's appointments and assign appropriate slots for particular consultations.
+## 📝 Module-Wise Description
 
-_**e-Ambulance Tracking**_ <br/>
-It would aid people in urgent need of medical help, the web app would provide the facility to book and track ambulances for essential help.
+_📌 **Registration**_ <br/>
+The web application would have a facility for the user's to register as either doctors or patients. Both of them would have access to specific features of the application.They will have a unique authentication ID so that their data is completely protected and giving access to specific users securely.
 
-_**Appointment Scheduler**_ <br/>
-The patient would be able to book appointments for the particular time slots he wishes to visit the hospital for.
+_📌 **Data Retrieval System**_ <br/>
+So much medical data will obviously not be typed by the patient or else the whole purpose of saving time will be defeated. Hence, the application will do the job itself by scanning paperwork and storing all the relevant data.
 
-_**Disease severity prediction**_ <br/>
-This module would provide an automated, AI enabled chatbot which would provide inputs on the medical condition of the user, in case medical help is not accessible
+_📌 **Medical Record Analytics**_ <br/>
+This would enable online storage of patient's documents. It will help preserve the documents and avoid the hassle of carrying them for every consultation. It will also be presented in a pictorial manner so that it is easier to grasp by the patient.
 
-_**Medical Record Storage**_ <br/>
-This module would enable online storage of patient's documents, this will help preserve them and avoid the hassle of carrying them for every consultation.
+_📌 **Disease Prediction**_ <br/>
+The disease prediction by the application will alert the patient to take immediate action before the situation turns sour as in our hectic lives as we don't take the time out for routine checkups.  Also if there is some discrepancy or negligence from the side of the doctor, the patient will realise that.
 
-## 👨🏻‍💻 How to get started?
+## 🤝 How to Contribute?
 
-You can refer to the following articles on basics of Git and Github and also contact the Project Mentors, in case you are stuck:
-
-- [Forking a Repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
-- [Cloning a Repo](https://help.github.com/en/desktop/contributing-to-projects/creating-a-pull-request)
-- [How to create a Pull Request](https://opensource.com/article/19/7/create-pull-request-github)
-- [Getting started with Git and GitHub](https://towardsdatascience.com/getting-started-with-git-and-github-6fcd0f2d4ac6)
-
-## 📝 How to Contribute?
-
-- Take a look at [Contributing Guide](https://github.com/avinashkranjan/Amazing-Python-Scripts/blob/master/CONTRIBUTING.md)
 - Take a look at the Existing Issues or create your own Issues!
 - Wait for the Issue to be assigned to you after which you can start working on it.
 - Fork the Repo and create a Branch for any Issue that you are working upon.
 - Create a Pull Request which will be promptly reviewed and suggestions would be added to improve it.
 - Add Screenshots to help us know what this Script is all about.
 
-## Contributors ✨
+## 👨‍💻 Contributors ✨
 
-Thanks goes to these wonderful people 👨🏻‍💻:
-
-Contributions of any kind welcome! 🚀
-
-<center>
 <table>
   <tr>
-    <td align="center"><a href=""><img src="https://avatars2.githubusercontent.com/u/46092576?s=460&u=32c24b6d0308f5fdfff2ab740a9f525894edb582&v=4" width="100px;" alt=""/><br /><sub><b>Soumyajit Behera</b></sub></a><br /></td>
-    <td align="center"><a href=""><img src="https://avatars1.githubusercontent.com/u/41537515?v=4" width="100px;" alt=""/><br /><sub><b>Rahul Kumar Patro</b></sub></a><br /></td>
-    <td align="center"><a href=""><img src="https://avatars1.githubusercontent.com/u/50270580?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Arjita Basu</b></sub></a><br /></td> 
+    <td align="center"><a href="https://github.com/soumyajit4419"><img src="https://avatars2.githubusercontent.com/u/46092576?s=460&u=32c24b6d0308f5fdfff2ab740a9f525894edb582&v=4" width="100px;" alt=""/><br /><sub><b>Soumyajit Behera</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/Rahul1582"><img src="https://avatars2.githubusercontent.com/u/47784845?s=400&u=1e9898b8c4b762fcda1f37864c16b5de11f885ce&v=4" width="100px;" alt=""/><br /><sub><b>Rahul Kumar Patro</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/Arjita-Basu"><img src="https://avatars1.githubusercontent.com/u/50270580?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Arjita Basu</b></sub></a><br /></td> 
   </tr>
 </table>
-</center>
