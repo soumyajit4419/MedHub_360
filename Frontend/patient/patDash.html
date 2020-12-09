@@ -89,9 +89,9 @@
               <i class="fe fe-folder fe-16"></i>
               <span class="ml-3 item-text">File Manager</span>
             </a>
-            <ul class="collapse list-unstyled pl-4 w-100" id="fileman">
-              <a class="nav-link pl-3" href="./patFileBlood.html"><span class="ml-1">Upload Heamogloin Report</span></a>
-              <a class="nav-link pl-3" href="./patFileSugar.html"><span class="ml-1">Upload Sugar Report</span></a>
+            <ul class="collapse list-unstyled pl-4 w-100 text-center" id="fileman">
+              <a class="nav-link pl-3" href="./patFileBlood.html"><span class="ml-1">Upload Blood Count Reports</span></a>
+              <a class="nav-link pl-3" href="./patFileSugar.html"><span class="ml-1">Upload Blood Sugar Reports</span></a>
             </ul>
           </li>
         </ul>
@@ -274,15 +274,7 @@
             <!-- Bar charts-->
             <div class="row align-items-center my-2">
               <div class="col-auto ml-auto">
-                <form class="form-inline">
-                  <div class="form-group">
-                    <label for="reportrange" class="sr-only">Date Ranges</label>
-                    <div id="reportrange" class="px-2 py-2 text-muted">
-                      <i class="fe fe-calendar fe-16 mx-2"></i>
-                      <span class="small"></span>
-                    </div>
-                  </div>
-                </form>
+               
               </div>
             </div>
             <div class="row my-4">
@@ -290,7 +282,15 @@
               <div class="col-md-12">
                 <div class="chart-box">
                   <h2 class="h2 text-center">Blood Glucose Level</h2>
-                  <div id="columnChart"></div>
+                  <div class="col pr-0  text-center">
+                    <p class="small text-muted mb-0">Blood Sugar(F) -> 60-100 mgs/dl</p>
+                    <p class="small text-muted mb-0">Blood Sugar(PP) -> 100-150 mgs/dl</p>
+                  </div>
+  
+                  <div id="columnChart">
+                   
+                  </div>
+                  
                 </div>
               </div> <!-- .col -->
             </div> <!-- end section -->
@@ -299,6 +299,11 @@
             <!-- Line charts-->
             <div class="my-4">
               <h2 class="h2 text-center">Blood Count Levels</h2>
+              <div class="col pr-0  text-center">
+                <p class="small text-muted mb-0"> Haemoglobin -> 12–17 g/dl</p>
+                <p class="small text-muted mb-0"> Platelet Count-> 1.5-4.0 lakhs/mcL</p>
+                <p class="small text-muted mb-0"> RBC Count -> 4.5–6.0 millions/mm3</p>
+              </div>
               <div id="lineChart"></div>
             </div>
 
@@ -360,161 +365,6 @@
   <script src='../js/lib/dropzone.min.js'></script>
   <script src='../js/lib/uppy.min.js'></script>
   <script src='../js/lib/quill.min.js'></script>
-  <script>
-    $('.select2').select2(
-      {
-        theme: 'bootstrap4',
-      });
-    $('.select2-multi').select2(
-      {
-        multiple: true,
-        theme: 'bootstrap4',
-      });
-    $('.drgpicker').daterangepicker(
-      {
-        singleDatePicker: true,
-        timePicker: false,
-        showDropdowns: true,
-        locale:
-        {
-          format: 'MM/DD/YYYY'
-        }
-      });
-    $('.time-input').timepicker(
-      {
-        'scrollDefault': 'now',
-        'zindex': '9999' /* fix modal open */
-      });
-    /** date range picker */
-    if ($('.datetimes').length) {
-      $('.datetimes').daterangepicker(
-        {
-          timePicker: true,
-          startDate: moment().startOf('hour'),
-          endDate: moment().startOf('hour').add(32, 'hour'),
-          locale:
-          {
-            format: 'M/DD hh:mm A'
-          }
-        });
-    }
-    var start = moment().subtract(29, 'days');
-    var end = moment();
-
-    function cb(start, end) {
-      $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-    }
-    $('#reportrange').daterangepicker(
-      {
-        startDate: start,
-        endDate: end,
-        ranges:
-        {
-          'Today': [moment(), moment()],
-          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month': [moment().startOf('month'), moment().endOf('month')],
-          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        }
-      }, cb);
-    cb(start, end);
-    $('.input-placeholder').mask("00/00/0000",
-      {
-        placeholder: "__/__/____"
-      });
-    $('.input-zip').mask('00000-000',
-      {
-        placeholder: "____-___"
-      });
-    $('.input-money').mask("#.##0,00",
-      {
-        reverse: true
-      });
-    $('.input-phoneus').mask('(000) 000-0000');
-    $('.input-mixed').mask('AAA 000-S0S');
-    $('.input-ip').mask('0ZZ.0ZZ.0ZZ.0ZZ',
-      {
-        translation:
-        {
-          'Z':
-          {
-            pattern: /[0-9]/,
-            optional: true
-          }
-        },
-        placeholder: "___.___.___.___"
-      });
-    // editor
-    var editor = document.getElementById('editor');
-    if (editor) {
-      var toolbarOptions = [
-        [
-          {
-            'font': []
-          }],
-        [
-          {
-            'header': [1, 2, 3, 4, 5, 6, false]
-          }],
-        ['bold', 'italic', 'underline', 'strike'],
-        ['blockquote', 'code-block'],
-        [
-          {
-            'header': 1
-          },
-          {
-            'header': 2
-          }],
-        [
-          {
-            'list': 'ordered'
-          },
-          {
-            'list': 'bullet'
-          }],
-        [
-          {
-            'script': 'sub'
-          },
-          {
-            'script': 'super'
-          }],
-        [
-          {
-            'indent': '-1'
-          },
-          {
-            'indent': '+1'
-          }], // outdent/indent
-        [
-          {
-            'direction': 'rtl'
-          }], // text direction
-        [
-          {
-            'color': []
-          },
-          {
-            'background': []
-          }], // dropdown with defaults from theme
-        [
-          {
-            'align': []
-          }],
-        ['clean'] // remove formatting button
-      ];
-      var quill = new Quill(editor,
-        {
-          modules:
-          {
-            toolbar: toolbarOptions
-          },
-          theme: 'snow'
-        });
-    }
-
-  </script>
   <script src="../js/lib/apps.js"></script>
   <script src="./js/patDash.js"></script>
 </body>
