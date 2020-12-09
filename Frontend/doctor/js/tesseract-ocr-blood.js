@@ -173,6 +173,7 @@ function recognizeFile(file) {
 }
 
 function uploadData() {
+  $("#bloodUpload").prop("disabled", true);
   $("#resAlert").hide();
   $.ajax({
     url: url + "/doc/updateBloodCountDetails",
@@ -191,12 +192,13 @@ function uploadData() {
       if (res.status !== 200) {
         $("#resAlert").text(res.message);
         $("#resAlert").show();
+        $("#bloodUpload").prop("disabled", false);
       } else if (res.status === 200) {
         $("#resAlert").text(res.message);
         $("#resAlert").show();
         setInterval(function () {
           window.location.reload();
-        }, 4000);
+        }, 2000);
       }
     },
     error: function (err) {

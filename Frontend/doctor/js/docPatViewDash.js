@@ -2,6 +2,7 @@ const url = "https://health-automation-application.herokuapp.com";
 
 $("#details").hide();
 $("#error-alert").hide();
+$("#spinner").hide();
 
 $.ajax({
   url: url + "/doc/verify",
@@ -29,6 +30,9 @@ function getpatientdata() {
   var userid = $("#userpatid").val();
   if (userid == "") return;
 
+  $("#srch").prop("disabled", true);
+  $("#spinner").show();
+
   $.ajax({
     url: url + "/doc/getPatientData",
     method: "POST",
@@ -44,7 +48,11 @@ function getpatientdata() {
         console.log(res.message);
         $("#error-alert").text(res.message);
         $("#error-alert").show();
+        $("#srch").prop("disabled", false);
+        $("#spinner").hide();
       } else if (res.status === 200) {
+        $("#srch").prop("disabled", false);
+        $("#spinner").hide();
         console.log(res.data);
         var fName = res.data.name.split(" ");
         $("#patname").html(fName[0]);

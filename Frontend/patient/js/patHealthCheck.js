@@ -2,6 +2,7 @@ const url = "https://health-automation-application.herokuapp.com";
 const url1 = "https://health-conona-detect.herokuapp.com";
 
 $("#resAlert").hide();
+$("#spinner").hide();
 
 $.ajax({
   url: url + "/user/verify",
@@ -30,6 +31,7 @@ function logout() {
 
 function predictDisease() {
   $("#resAlert").hide();
+
   var trip = $("#trip").val();
   var fever = $("#fever").val();
   var iteyes = $("#iteyes").val();
@@ -43,10 +45,13 @@ function predictDisease() {
   if (runnose == "") return;
   if (trbr == "") return;
   if (cough == "") return;
+  $("#disPred").prop("disabled", true);
+  $("#spinner").show();
+
   var data = JSON.stringify({
     values: [trip, fever, iteyes, runnose, trbr, cough],
   });
-  console.log(data);
+
   $.ajax({
     url: url1 + "/predict",
     method: "POST",
@@ -55,6 +60,9 @@ function predictDisease() {
     data: data,
     success: function (res) {
       console.log(res);
+      $("#disPred").prop("disabled", false);
+      $("#spinner").hide();
+      $("#disPred").prop("disabled", false);
       $("#resAlert").html(`Disease maybe ${res}`);
       $("#resAlert").show();
     },

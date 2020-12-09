@@ -143,7 +143,9 @@
           <form class="searchform searchform-lg" onsubmit="event.preventDefault()">
             <input class="form-control form-control-lg bg-white rounded-pill pl-5" type="search" placeholder="Enter ID"
               aria-label="Search" id="userpatid" required>
-            <button class="btn mb-3 btn-primary mt-3" type="submit" onclick="getpatientdata()">Search</button>
+            <button class="btn mb-3 btn-primary mt-3" type="submit" onclick="getpatientdata()" id="srch">
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" id="spinner"></span>
+              Search</button>
             <div class="alert alert-danger" role="alert" id="error-alert"></div>
           </form>
         </div>
