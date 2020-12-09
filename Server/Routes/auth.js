@@ -44,6 +44,8 @@ router.post(
     const userId = "PAT" + ids.toString();
     const age = req.body.age;
     const sex = req.body.sex;
+    const weight = req.body.weight;
+    const height = req.body.height;
 
     bcrypt.hash(req.body.password, 6, function (err, hashPassword) {
       if (err) {
@@ -57,6 +59,8 @@ router.post(
           userId: userId,
           age: age,
           sex: sex,
+          weight: weight,
+          height: height,
         },
         function (err, user) {
           if (err) {
@@ -109,6 +113,8 @@ router.post(
     const userId = "DOC" + ids.toString();
     const age = req.body.age;
     const sex = req.body.sex;
+    const weight = req.body.weight;
+    const height = req.body.height;
 
     bcrypt.hash(req.body.password, 6, function (err, hashPassword) {
       if (err) {
@@ -122,6 +128,8 @@ router.post(
           userId: userId,
           age: age,
           sex: sex,
+          weight: weight,
+          height: height,
         },
         function (err, user) {
           if (err) {
@@ -158,7 +166,7 @@ router.post(
       if (err) {
         return res.json({ status: 500, message: "Internal server error" });
       } else if (!user) {
-        return res.json({ status: 400, message: "Invalid Email Address" });
+        return res.json({ status: 400, message: "User Not Registered" });
       } else if (user) {
         bcrypt.compare(
           req.body.password,
@@ -208,7 +216,7 @@ router.post(
       if (err) {
         return res.json({ status: 500, message: "Internal server error" });
       } else if (!user) {
-        return res.json({ status: 400, message: "Invalid Email Address" });
+        return res.json({ status: 400, message: "User Not Registered" });
       } else if (user) {
         bcrypt.compare(
           req.body.password,
