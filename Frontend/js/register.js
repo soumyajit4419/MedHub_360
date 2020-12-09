@@ -17,6 +17,8 @@ function register() {
   var age = $("#age").val();
   var sex = $("#sex").val();
   var userType = $("#inputUser").val();
+  var height = $("#height").val();
+  var weight = $("#weight").val();
 
   if (name == "") return;
   if (email == "") return;
@@ -24,6 +26,8 @@ function register() {
   if (confirmPassword == "") return;
   if (age == "") return;
   if (sex == "") return;
+  if (weight == "") return;
+  if (height == "") return;
   if (userType == "") return;
 
   $("#signUp").prop("disabled", true);
@@ -46,6 +50,8 @@ function register() {
         confirmPassword: confirmPassword,
         age: age,
         sex: sex,
+        weight: weight,
+        height: height,
       },
       success: function (res) {
         if (res.status !== 200) {
@@ -78,6 +84,8 @@ function register() {
         confirmPassword: confirmPassword,
         age: age,
         sex: sex,
+        weight: weight,
+        height: height,
       },
       success: function (res) {
         if (res.status !== 200) {

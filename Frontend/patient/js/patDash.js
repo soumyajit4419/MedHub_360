@@ -1,5 +1,5 @@
 const url = "https://health-automation-application.herokuapp.com";
-
+$("#dash").css("visibility", "hidden");
 $.ajax({
   url: url + "/user/verify",
   method: "GET",
@@ -39,6 +39,7 @@ $.ajax({
       $("#patuserid").html(res.data.userId);
       $("#patheight").html(`${res.data.height} Cms`);
       $("#patweight").html(`${res.data.weight} Kg`);
+      $("#bp").text(`${res.data.bloodPressure} mmHg`);
 
       sugararrf = [];
       sugararrpp = [];
@@ -395,7 +396,7 @@ $.ajax({
           gradientRadial,
           gradientRadialOptions
         )).render();
-
+      $("#dash").css("visibility", "visible");
       console.log(res.data);
     }
   },

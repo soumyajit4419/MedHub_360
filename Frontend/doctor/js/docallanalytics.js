@@ -1,5 +1,7 @@
 const url = "https://health-automation-application.herokuapp.com";
 
+$("#gpAlyts").css("visibility", "hidden");
+
 $.ajax({
   url: url + "/doc/verify",
   method: "GET",
@@ -924,6 +926,7 @@ $.ajax({
         barChartCtn = document.querySelector("#barChartdoc");
       barChartCtn &&
         (barChart = new ApexCharts(barChartCtn, barChartoptions)).render();
+      $("#gpAlyts").css("visibility", "visible");
     }
   },
   error: function (err) {

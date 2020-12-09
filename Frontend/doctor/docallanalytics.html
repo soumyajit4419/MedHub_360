@@ -29,7 +29,12 @@
   <link rel="stylesheet" href="../css/app-dark.css" id="darkTheme">
 </head>
 
-<body class="vertical  dark  ">
+<body class="vertical  dark ">
+  <!--===== Preloader Section===== -->
+  <div id="preloader">
+    <div id="loader">
+    </div>
+  </div>
   <div class="wrapper">
     <!--########## -->
     <!-- Navbar-->
@@ -102,9 +107,11 @@
               <i class="fe fe-folder fe-16"></i>
               <span class="ml-3 item-text">File Manager</span>
             </a>
-            <ul class="collapse list-unstyled pl-4 w-100" id="fileman">
-              <a class="nav-link pl-5" href="./docFileBlood.html"><span class="ml-1">Upload Blood Count Reports</span></a>
-              <a class="nav-link pl-3" href="./docFileSugar.html"><span class="ml-1">Upload Blood Sugar Reports</span></a>
+            <ul class="collapse list-unstyled pl-3 w-100" id="fileman">
+              <a class="nav-link pl-3" href="./docFileBlood.html"><span class="ml-1">Upload Blood Count
+                  Reports</span></a>
+              <a class="nav-link pl-3" href="./docFileSugar.html"><span class="ml-1">Upload Blood Sugar
+                  Reports</span></a>
             </ul>
           </li>
         </ul>
@@ -134,7 +141,7 @@
     <!--########## -->
     <!-- Main Body -->
     <!--########## -->
-    <main role="main" class="main-content">
+    <main role="main" class="main-content" id="gpAlyts">
       <div class="container-fluid">
         <h1 class="h1 text-center">Data Analytics</h1>
         <div class="row justify-content-center">
@@ -295,10 +302,9 @@
   <script src='../js/lib/dropzone.min.js'></script>
   <script src='../js/lib/uppy.min.js'></script>
   <script src='../js/lib/quill.min.js'></script>
-
-  
   <script src="../js/lib/apps.js"></script>
   <script src="./js/docallanalytics.js"></script>
+  <script src="../js/loader.js"></script>
 </body>
 
 </html>

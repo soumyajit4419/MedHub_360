@@ -24,8 +24,12 @@
 </head>
 
 <body class="vertical  dark">
-  <div class="wrapper">
+  <div id="preloader">
+    <div id="loader">
+    </div>
+  </div>
 
+  <div class="wrapper">
     <!--########## -->
     <!-- Navbar -->
     <!--########## -->
@@ -84,9 +88,11 @@
               <i class="fe fe-folder fe-16"></i>
               <span class="ml-3 item-text">File Manager</span>
             </a>
-            <ul class="collapse list-unstyled pl-4 w-100 text-center" id="fileman">
-              <a class="nav-link pl-3" href="./patFileBlood.html"><span class="ml-1">Upload Blood Count Reports</span></a>
-              <a class="nav-link pl-3" href="./patFileSugar.html"><span class="ml-1">Upload Blood Sugar Reports</span></a>
+            <ul class="collapse list-unstyled pl-3 w-100 text-center" id="fileman">
+              <a class="nav-link pl-3" href="./patFileBlood.html"><span class="ml-1">Upload Blood Count
+                  Reports</span></a>
+              <a class="nav-link pl-3" href="./patFileSugar.html"><span class="ml-1">Upload Blood Sugar
+                  Reports</span></a>
             </ul>
           </li>
         </ul>
@@ -130,7 +136,7 @@
     <!-- Main Body -->
     <!--########## -->
 
-    <main role="main" class="main-content">
+    <main role="main" class="main-content" id="prof">
       <div class="container-fluid">
         <div class="row justify-content-center">
           <div class="col-12">
@@ -146,7 +152,7 @@
               </div>
               <div class="col-md-3">
                 <div class="card mb-4 shadow">
-                  <div class="card-body my-n3">
+                  <div class="card-body my-n3 pb-4">
                     <div class="row align-items-center">
                       <div class="col-3 text-center">
                         <span class="circle circle-lg bg-light">
@@ -154,8 +160,8 @@
                         </span>
                       </div> <!-- .col -->
                       <div class="col" style="padding-left: 2em;">
-                        <h3 class="h5 mt-4 mb-1">User ID</h3>
-                        <p class="text-muted" id="patuserid"></p>
+                        <h3 class="h4 mt-4 mb-1">User ID</h3>
+                        <p class="text-muted h5" id="patuserid"></p>
                       </div> <!-- .col -->
                     </div> <!-- .row -->
                   </div> <!-- .card-body -->
@@ -165,7 +171,7 @@
             <div class="row my-4">
               <div class="col-md-4">
                 <div class="card mb-4 shadow">
-                  <div class="card-body my-n3">
+                  <div class="card-body my-n3 pb-5 pt-5">
                     <div class="row align-items-center">
                       <div class="col-3 text-center">
                         <span class="circle circle-lg bg-light">
@@ -174,9 +180,9 @@
                       </div> <!-- .col -->
                       <div class="col">
                         <a href="./patHealthCheck.html">
-                          <h3 class="h5 mt-4 mb-1">Health Check</h3>
+                          <h3 class="h3 mt-4 mb-1">Health Check</h3>
                         </a>
-                        
+
                       </div> <!-- .col -->
                     </div> <!-- .row -->
                   </div> <!-- .card-body -->
@@ -188,7 +194,7 @@
               </div> <!-- .col-md-->
               <div class="col-md-4">
                 <div class="card mb-4 shadow">
-                  <div class="card-body my-n3">
+                  <div class="card-body my-n3 pb-5 pt-5">
                     <div class="row align-items-center">
                       <div class="col-3 text-center">
                         <span class="circle circle-lg bg-light">
@@ -197,9 +203,9 @@
                       </div> <!-- .col -->
                       <div class="col">
                         <a href="./resetPatPaswd.html">
-                          <h3 class="h5 mt-4 mb-1">Security</h3>
+                          <h3 class="h3 mt-4 mb-1">Security</h3>
                         </a>
-                        
+
                       </div> <!-- .col -->
                     </div> <!-- .row -->
                   </div> <!-- .card-body -->
@@ -211,7 +217,7 @@
               </div> <!-- .col-md-->
               <div class="col-md-4">
                 <div class="card mb-4 shadow">
-                  <div class="card-body my-n3">
+                  <div class="card-body my-n3 pb-5 pt-5">
                     <div class="row align-items-center">
                       <div class="col-3 text-center">
                         <span class="circle circle-lg bg-light">
@@ -220,9 +226,9 @@
                       </div> <!-- .col -->
                       <div class="col">
                         <a href="./patDash.html">
-                          <h3 class="h5 mt-4 mb-1">Analytics</h3>
+                          <h3 class="h3 mt-4 mb-1">Analytics</h3>
                         </a>
-                       
+
                       </div> <!-- .col -->
                     </div> <!-- .row -->
                   </div> <!-- .card-body -->
@@ -250,6 +256,7 @@
   <script src="../js/lib/config.js"></script>
   <script src="../js/lib/apps.js"></script>
   <script src="./js/patProfile.js"></script>
+  <script src="../js/loader.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,6 @@
 const url = "https://health-automation-application.herokuapp.com";
+$("#prof").css("visibility", "hidden");
+
 $.ajax({
   url: url + "/user/verify",
   method: "GET",
@@ -34,7 +36,7 @@ $.ajax({
       $("#patname").html(res.data.name);
       $("#patemail").html(res.data.email);
       $("#patuserid").html(res.data.userId);
-
+      $("#prof").css("visibility", "visible");
       console.log(res.data);
     }
   },

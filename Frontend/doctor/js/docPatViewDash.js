@@ -45,7 +45,6 @@ function getpatientdata() {
     },
     success: function (res) {
       if (res.status !== 200) {
-        console.log(res.message);
         $("#error-alert").text(res.message);
         $("#error-alert").show();
         $("#srch").prop("disabled", false);

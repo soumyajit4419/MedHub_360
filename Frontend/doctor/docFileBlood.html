@@ -31,7 +31,12 @@
   <script src='https://unpkg.com/tesseract.js@v2.0.0-alpha.13/dist/tesseract.min.js'></script>
 </head>
 
-<body class="vertical  dark ">
+<body class="vertical  dark">
+  <!--===== Preloader Section===== -->
+  <div id="preloader">
+    <div id="loader">
+    </div>
+  </div>
   <div class="wrapper">
 
     <!--########## -->
@@ -105,9 +110,11 @@
               <i class="fe fe-folder fe-16"></i>
               <span class="ml-3 item-text">File Manager</span>
             </a>
-            <ul class="collapse list-unstyled pl-4 w-100 text-center" id="fileman">
-              <a class="nav-link pl-3" href="./docFileBlood.html"><span class="ml-1">Upload Blood Count Reports</span></a>
-              <a class="nav-link pl-3" href="./docFileSugar.html"><span class="ml-1">Upload Blood Sugar Reports</span></a>
+            <ul class="collapse list-unstyled pl-3 w-100 text-center" id="fileman">
+              <a class="nav-link pl-3" href="./docFileBlood.html"><span class="ml-1">Upload Blood Count
+                  Reports</span></a>
+              <a class="nav-link pl-3" href="./docFileSugar.html"><span class="ml-1">Upload Blood Sugar
+                  Reports</span></a>
             </ul>
           </li>
         </ul>
@@ -242,6 +249,7 @@
   <script src='../js/lib/quill.min.js'></script>
   <script src="../js/lib/apps.js"></script>
   <script src="./js/tesseract-ocr-blood.js"></script>
+  <script src="../js/loader.js"></script>
 </body>
 
 </html>

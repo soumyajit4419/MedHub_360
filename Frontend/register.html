@@ -24,6 +24,10 @@
 </head>
 
 <body class="dark">
+  <div id="preloader">
+    <div id="loader">
+    </div>
+  </div>
   <div class="wrapper vh-100" style="padding-top:2em;">
     <div class="align-items-center h-100">
       <form class="col-lg-6 col-md-8 col-10 mx-auto" onsubmit="event.preventDefault()">
@@ -35,12 +39,12 @@
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
+          <input type="email" class="form-control" id="email" placeholder="Enter Email" autocomplete="off" required>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="name">Name</label>
-            <input type="text" id="name" class="form-control" placeholder="Enter Name" required>
+            <input type="text" id="name" class="form-control" placeholder="Enter Name" autocomplete="off" required>
           </div>
           <div class="form-group col-md-6">
             <label for="inputUser">User Type</label>
@@ -64,6 +68,16 @@
               <option value="Female">Female</option>
               <option value="Others">Others</option>
             </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="weight">Weight (kg)</label>
+            <input type="text" id="weight" class="form-control" placeholder="Enter Weight in 'kg' " required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="height">Height (cms)</label>
+            <input type="text" id="height" class="form-control" placeholder="Enter Height in 'cms' " required>
           </div>
         </div>
         <hr class="my-4">
@@ -112,7 +126,7 @@
   <script src="js/lib/config.js"></script>
   <script src="js/lib/apps.js"></script>
   <script src="js/register.js"></script>
-
+  <script src="js/loader.js"></script>
 </body>
 
 </html>

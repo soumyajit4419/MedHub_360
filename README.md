@@ -1,4 +1,4 @@
-![socialify](https://socialify.git.ci/soumyajit4419/How_Healthy_Are_You/image?description=1&font=Bitter&forks=1&issues=1&language=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
+![socialify](https://socialify.git.ci/soumyajit4419/MedHub_360/image?description=1&font=Bitter&forks=1&issues=1&language=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
 ### [Devfolio Link]()
 
@@ -8,19 +8,19 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 
-# 📱 _Automating Healthcare_ 🏥
+# 📱 _MedHub 360_ 🏥
 
 _**Connecting Doctors and Patients and making hassle free strorage and access to medical information from anywhere**_ <br />
 
 ### 😔 Challenges in Indian Medical System :
 
-1. Most of the medical records we have today are in `unstructured form`. For a patient it is difficult to store tons of data in the form of `doctor’s notes`, `discharge statements`, `prescriptions` and lab reports which are all in paper. 
+1. Most of the medical records we have today are in `unstructured form`. For a patient it is difficult to store tons of data in the form of `doctor’s notes`, `discharge statements`, `prescriptions` and lab reports which are all in paper.
 2. Such data is mostly unstructured, and very` difficult` to `analyse`.
-3. The `past medical data` is important for a doctor, because in our country, we go to various doctors depending on their specialities and the current doctor must know what all has been `administered` in the `past` for `better diagnosis`. 
-4. On top of that, because of the obvious `difficulties` of storing them as `hard copies`, some of them might be `misplaced` which may make it all the more `difficult` for a `doctor` to help. 
+3. The `past medical data` is important for a doctor, because in our country, we go to various doctors depending on their specialities and the current doctor must know what all has been `administered` in the `past` for `better diagnosis`.
+4. On top of that, because of the obvious `difficulties` of storing them as `hard copies`, some of them might be `misplaced` which may make it all the more `difficult` for a `doctor` to help.
 5. By using this `application`, the `doctor` doesn't have to `sift` through tons of `paperwork` and the data is available in a structured way which makes the diagnosis `fast` and `effective`. With the `Symptoms Checker System`, many people of our country who `don't` have `access` to nearby emergency medical facilities can check with the help of this application by what `disease` they may be `suffering` from.
 
-With the amount of pressure Indian Medical system has, this one application will go a long way in making things faster, smoother and easier for patients as well as doctors. 
+With the amount of pressure Indian Medical system has, this one application will go a long way in making things faster, smoother and easier for patients as well as doctors.
 
 ### 🎯 Our Goals :
 
@@ -38,7 +38,7 @@ _📌 **Data Retrieval System**_ <br/>
 So much medical data will obviously not be typed by the patient or else the whole purpose of saving time will be defeated. Hence, the application will do the job itself by scanning paperwork and storing all the relevant data. Once the users as patients or doctors upload their reports we extract all the necessary information and store it in our database respectively.
 
 _📌 **Medical Record Analytics**_ <br/>
-This would enable online storage of the data of the user's medical reports. It will help preserve the data and avoid the hassle of carrying the documents for every consultation. It will also be presented in a pictorial manner so that it is easier to grasp by the patient and even more easy for the doctors to diagonise the patients as for doctors they can get the graphical analysis in pictorial format of a particular patient by giving that particular USER ID. The Analysis of Blood Sugar Levels, Blood Count Levels etc are shown in a graphical manner. For Doctors all Analytics section is also there where the average data of Blood Sugar, Blood Count etc are shown user wise of patients and doctors so that how a particular user average value varies among all can be analysed. 
+This would enable online storage of the data of the user's medical reports. It will help preserve the data and avoid the hassle of carrying the documents for every consultation. It will also be presented in a pictorial manner so that it is easier to grasp by the patient and even more easy for the doctors to diagonise the patients as for doctors they can get the graphical analysis in pictorial format of a particular patient by giving that particular USER ID. The Analysis of Blood Sugar Levels, Blood Count Levels etc are shown in a graphical manner. For Doctors all Analytics section is also there where the average data of Blood Sugar, Blood Count etc are shown user wise of patients and doctors so that how a particular user average value varies among all can be analysed.
 
 _📌 **Disease Prediction**_ <br/>
 The disease prediction by the application will alert the patient to take immediate action before the situation turns sour as in our hectic lives as we don't take the time out for routine checkups. Some symptoms will be asked to the users and by those results a disease will be predicted. Also if there is some discrepancy or negligence from the side of the doctor, the patient will realise that.
