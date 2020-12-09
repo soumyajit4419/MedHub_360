@@ -1,4 +1,4 @@
-![socialify](https://socialify.git.ci/soumyajit4419/MedHub_360/image?description=1&font=Bitter&forks=1&issues=1&language=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
+![socialify](https://socialify.git.ci/soumyajit4419/MedHub_360/image?font=Raleway&forks=1&issues=1&language=1&pattern=Plus&pulls=1&stargazers=1&theme=Light)
 
 ### [Devfolio Link]()
 
