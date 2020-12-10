@@ -32,7 +32,7 @@ With the amount of pressure Indian Medical system has, this one application will
 ## 📝 Module-Wise Description
 
 _📌 **Registration**_ <br/>
-The web application would have a facility for the user's to register as either doctors or patients. After registering you can login as a doctor or patients using the same credentially used for registration. After logging in both of them would have access to specific features of the application. They will have a unique authentication ID so that their data is completely protected and giving access to specific users securely.
+The web application have a facility for the users to register as either doctors or patients. After registering you can login as a doctor or patient using the same credentials used for registration. After logging in both of them would have access to specific features of the application. They will have a unique authentication ID so that their data is completely protected and giving access to specific users securely.
 
 _📌 **Data Retrieval System**_ <br/>
 So much medical data will obviously not be typed by the patient or else the whole purpose of saving time will be defeated. Hence, the application will do the job itself by scanning paperwork and storing all the relevant data. Once the users as patients or doctors upload their reports we extract all the necessary information and store it in our database respectively.
