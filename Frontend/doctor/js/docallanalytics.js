@@ -245,15 +245,15 @@ $.ajax({
         lineChartoptions = {
           series: [
             {
-              name: "Haemoglobin",
+              name: "Haemoglobin Average",
               data: hgmean,
             },
             {
-              name: "Platelet Count",
+              name: "Platelet Count Average",
               data: plateletmean,
             },
             {
-              name: "RBC Count",
+              name: "RBC Count Average",
               data: rbcmean,
             },
           ],
