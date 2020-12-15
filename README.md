@@ -1,4 +1,4 @@
-![socialify](https://socialify.git.ci/soumyajit4419/MedHub_360/image?font=Raleway&forks=1&issues=1&language=1&pattern=Plus&pulls=1&stargazers=1&theme=Light)
+![MedHub_360](https://socialify.git.ci/soumyajit4419/MedHub_360/image?forks=1&issues=1&language=1&pulls=1&stargazers=1&theme=Light)
 
 **[Devfolio Submission](https://devfolio.co/submissions/medhub-4)** &nbsp; &nbsp; &nbsp; **[YouTube Video](https://youtu.be/Rfm2tWCNOn4)**
 
